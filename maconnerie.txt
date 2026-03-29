@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maçonnerie | Ranc & Genevois Construction</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="Logo Ranc & Genevois Construction" />
+          <span class="logo-fallback">R&amp;G Construction</span>
+        </a>
+
+        <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+
+        <nav class="main-nav">
+          <a href="entreprise.html" class="nav-pill">Entreprise</a>
+
+          <div class="nav-dropdown">
+            <a href="expertises.html" class="nav-pill">Expertises</a>
+            <div class="dropdown-menu">
+              <a href="maconnerie.html">Maçonnerie</a>
+              <a href="toiture.html">Toiture</a>
+              <a href="carrelage.html">Carrelage</a>
+            </div>
+          </div>
+
+          <a href="realisations.html" class="nav-pill">Réalisations</a>
+          <a href="contact.html" class="btn btn-small">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="page-hero">
+        <div class="container narrow">
+          <p class="eyebrow">Expertise</p>
+          <h1>Maçonnerie</h1>
+          <p class="lead">
+            L’entreprise intervient en maçonnerie traditionnelle, rénovation du
+            bâti ancien, reprises structurelles, créations d’ouvertures en
+            sous-œuvre et travaux techniques.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split-grid">
+          <div class="card media-card">
+            <div class="placeholder">Photo maçonnerie</div>
+          </div>
+
+          <div class="text-block">
+            <h2>Un savoir-faire technique</h2>
+            <div class="mini-tags">
+              <span class="mini-tag">Patrimoine</span>
+              <span class="mini-tag">Sous-œuvre</span>
+              <span class="mini-tag">Structure</span>
+            </div>
+            <p>
+              Cette page pourra mettre en avant les références comme Maison Marcel,
+              Villa Tassin, MDM Vaise ou Goyard, avec photos, descriptifs et
+              points techniques.
+            </p>
+            <a href="realisations.html" class="btn btn-secondary section-btn">Voir les réalisations</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="content-card">
+            <p class="eyebrow">Autres expertises</p>
+            <h2>Découvrir aussi</h2>
+            <div class="quick-links">
+              <a href="toiture.html" class="nav-pill">Toiture</a>
+              <a href="carrelage.html" class="nav-pill">Carrelage</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Ranc &amp; Genevois Construction</strong>
+          <p>41 chemin du Pras, 69350 La Mulatière</p>
+        </div>
+        <div>
+          <p>04 78 59 23 14</p>
+          <p>contact@ranc-genevois.com</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
