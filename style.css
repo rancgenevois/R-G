@@ -223,6 +223,10 @@ a {
   align-items: center;
 }
 
+.expertise-layout {
+  align-items: start;
+}
+
 .cards-grid {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -319,7 +323,8 @@ a {
 .hero-visual,
 .card,
 .stack-card,
-.before-after-slider {
+.before-after-slider,
+.content-card {
   border-radius: var(--radius);
   overflow: hidden;
 }
@@ -331,9 +336,14 @@ a {
   border: 1px solid var(--border);
 }
 
-.card {
+.card,
+.content-card {
   background: #fff;
   border: 1px solid var(--border);
+}
+
+.content-card {
+  padding: 24px;
 }
 
 .placeholder {
@@ -431,32 +441,48 @@ a {
   object-fit: contain;
 }
 
-/* AVANT / APRÈS SLIDER */
+/* AVANT / APRÈS FIXE */
 .before-after-slider {
   position: relative;
-  min-height: 420px;
+  height: 620px;
   border: 1px solid var(--border);
   background: var(--muted);
   user-select: none;
+  box-shadow: var(--shadow);
+}
+
+.portrait-slider {
+  min-height: 620px;
 }
 
 .before-after-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: 420px;
+  height: 100%;
   object-fit: cover;
-  display: block;
+  object-position: center;
+}
+
+.base-image {
+  z-index: 1;
 }
 
 .after-image-wrapper {
   position: absolute;
   inset: 0 auto 0 0;
-  overflow: hidden;
   height: 100%;
+  overflow: hidden;
+  z-index: 2;
 }
 
-.after-image-wrapper .before-after-image {
+.overlay-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .before-after-divider {
@@ -466,16 +492,17 @@ a {
   width: 2px;
   background: #fff;
   transform: translateX(-50%);
+  z-index: 4;
   pointer-events: none;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
 .before-after-handle {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 42px;
-  height: 42px;
+  width: 46px;
+  height: 46px;
   border-radius: 999px;
   background: #fff;
   border: 1px solid var(--border);
@@ -492,16 +519,16 @@ a {
   height: 8px;
   border-top: 2px solid var(--accent);
   border-right: 2px solid var(--accent);
-  transform: translateY(-50%) rotate(45deg);
 }
 
 .before-after-handle::before {
-  left: 10px;
-  transform: translateY(-50%) rotate(225deg);
+  left: 12px;
+  transform: translateY(-50%) rotate(-135deg);
 }
 
 .before-after-handle::after {
-  right: 10px;
+  right: 12px;
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .before-after-range {
@@ -510,19 +537,20 @@ a {
   width: 100%;
   height: 100%;
   opacity: 0;
+  z-index: 5;
   cursor: ew-resize;
 }
 
 .before-after-label {
   position: absolute;
   top: 16px;
-  z-index: 3;
-  padding: 8px 12px;
+  z-index: 6;
+  padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   border: 1px solid var(--border);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .before-label {
@@ -670,11 +698,14 @@ a {
   }
 
   .hero-visual,
-  .media-card,
-  .before-after-slider,
-  .before-after-image {
+  .media-card {
     min-height: 300px;
-    height: 300px;
+  }
+
+  .before-after-slider,
+  .portrait-slider {
+    height: 460px;
+    min-height: 460px;
   }
 
   .first-stack {
