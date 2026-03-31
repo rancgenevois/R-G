@@ -498,3 +498,58 @@ a {
     height: 46px;
   }
 }
+.project-card-vertical {
+  display: block;
+  overflow: hidden;
+}
+
+.before-after-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 0 24px 24px;
+}
+
+.before-after-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.before-after-title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.project-gallery {
+  display: grid;
+  gap: 12px;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: var(--muted);
+}
+
+.gallery-1 {
+  grid-template-columns: 1fr;
+}
+
+.gallery-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 900px) {
+  .before-after-block,
+  .gallery-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .project-gallery img {
+    height: 260px;
+  }
+}
