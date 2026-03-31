@@ -268,7 +268,8 @@ a {
 
 .hero-tags,
 .mini-tags,
-.project-tags {
+.project-tags,
+.quick-links {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -317,7 +318,8 @@ a {
 
 .hero-visual,
 .card,
-.stack-card {
+.stack-card,
+.before-after-slider {
   border-radius: var(--radius);
   overflow: hidden;
 }
@@ -427,6 +429,108 @@ a {
   width: 38px;
   height: 38px;
   object-fit: contain;
+}
+
+/* AVANT / APRÈS SLIDER */
+.before-after-slider {
+  position: relative;
+  min-height: 420px;
+  border: 1px solid var(--border);
+  background: var(--muted);
+  user-select: none;
+}
+
+.before-after-image {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.after-image-wrapper {
+  position: absolute;
+  inset: 0 auto 0 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+.after-image-wrapper .before-after-image {
+  width: 100%;
+  height: 100%;
+}
+
+.before-after-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #fff;
+  transform: translateX(-50%);
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.before-after-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid var(--border);
+  transform: translate(-50%, -50%);
+  box-shadow: var(--shadow);
+}
+
+.before-after-handle::before,
+.before-after-handle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid var(--accent);
+  border-right: 2px solid var(--accent);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.before-after-handle::before {
+  left: 10px;
+  transform: translateY(-50%) rotate(225deg);
+}
+
+.before-after-handle::after {
+  right: 10px;
+}
+
+.before-after-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+}
+
+.before-after-label {
+  position: absolute;
+  top: 16px;
+  z-index: 3;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.before-label {
+  left: 16px;
+}
+
+.after-label {
+  right: 16px;
 }
 
 /* RÉALISATIONS */
@@ -566,8 +670,11 @@ a {
   }
 
   .hero-visual,
-  .media-card {
+  .media-card,
+  .before-after-slider,
+  .before-after-image {
     min-height: 300px;
+    height: 300px;
   }
 
   .first-stack {
