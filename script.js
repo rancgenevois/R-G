@@ -1,3 +1,4 @@
+/* ── Menu mobile ── */
 const menuToggle = document.querySelector(".menu-toggle");
 const mainNav = document.querySelector(".main-nav");
 
@@ -7,6 +8,7 @@ if (menuToggle && mainNav) {
   });
 }
 
+/* ── Slider avant / après ── */
 const beforeAfterSliders = document.querySelectorAll("[data-before-after]");
 
 beforeAfterSliders.forEach((slider) => {
@@ -27,3 +29,35 @@ beforeAfterSliders.forEach((slider) => {
     updateSlider(event.target.value);
   });
 });
+
+/* ── Fondu du hero au scroll ── */
+const heroContent = document.querySelector(".hero-content-wrapper");
+const heroPanel   = document.querySelector(".hero-fullwidth");
+
+if (heroContent && heroPanel) {
+  // Le fondu commence quand on a scrollé 30% de la hauteur du hero
+  // et se termine à 65% (le contenu est alors invisible)
+  const FADE_START = 0.30;
+  const FADE_END   = 0.65;
+
+  const updateHeroOpacity = () => {
+    const heroHeight = heroPanel.offsetHeight;
+    const scrollY    = window.scrollY;
+
+    const start = heroHeight * FADE_START;
+    const end   = heroHeight * FADE_END;
+
+    let opacity = 1;
+
+    if (scrollY >= end) {
+      opacity = 0;
+    } else if (scrollY > start) {
+      opacity = 1 - (scrollY - start) / (end - start);
+    }
+
+    heroContent.style.opacity = opacity;
+  };
+
+  window.addEventListener("scroll", updateHeroOpacity, { passive: true });
+  updateHeroOpacity(); // état initial
+}
