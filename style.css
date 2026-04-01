@@ -268,13 +268,15 @@ a {
 
 .hero-fullwidth .hero-content {
   text-align: center;
-  max-width: 780px;
-  margin: 0 auto;
 }
 
 .hero-fullwidth .hero-tags,
 .hero-fullwidth .hero-actions {
   justify-content: center;
+}
+
+.hero-fullwidth {
+  transition: opacity 0.35s ease;
 }
 
 .hero-grid,
