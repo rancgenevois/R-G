@@ -31,12 +31,12 @@ beforeAfterSliders.forEach((slider) => {
 });
 
 /* ── Fondu du hero au scroll ── */
-const heroContent = document.querySelector(".hero-content-wrapper");
-const heroPanel   = document.querySelector(".hero-fullwidth");
+const heroPanel = document.querySelector(".hero-fullwidth");
 
-if (heroContent && heroPanel) {
-  // Le fondu commence quand on a scrollé 30% de la hauteur du hero
-  // et se termine à 65% (le contenu est alors invisible)
+if (heroPanel) {
+  // Fondu linéaire : commence à 30% de scroll dans le hero, termine à 65%
+  // On applique sur tout le panel (image + texte) pour éviter le snap
+  // quand le sticky se relâche en bas de page.
   const FADE_START = 0.30;
   const FADE_END   = 0.65;
 
@@ -55,7 +55,7 @@ if (heroContent && heroPanel) {
       opacity = 1 - (scrollY - start) / (end - start);
     }
 
-    heroContent.style.opacity = opacity;
+    heroPanel.style.opacity = opacity;
   };
 
   window.addEventListener("scroll", updateHeroOpacity, { passive: true });
