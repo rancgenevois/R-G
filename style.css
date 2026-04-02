@@ -241,6 +241,13 @@ a {
   align-items: stretch;
 }
 
+/* Le container doit aussi transmettre le flex pour que margin-top:auto fonctionne */
+.hero-content-wrapper > .container {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+}
+
 .hero-fullwidth .hero-content h1 {
   color: #fff;
 }
