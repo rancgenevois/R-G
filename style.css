@@ -236,7 +236,7 @@ a {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 36px 0 64px;
+  padding: 14px 0 56px;
   display: flex;
   align-items: stretch;
 }
@@ -275,13 +275,14 @@ a {
   text-align: center;
 }
 
-.hero-fullwidth .hero-content h1 {
+.hero-fullwidth .hero-content h1,
+.hero-fullwidth .hero-content p {
   text-align: left;
 }
 
 .hero-fullwidth .hero-tags {
   margin-top: auto;
-  padding-top: 48px;
+  padding-top: 64px;
 }
 
 .hero-fullwidth .hero-tags,
