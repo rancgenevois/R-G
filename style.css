@@ -270,6 +270,10 @@ a {
   text-align: center;
 }
 
+.hero-fullwidth .hero-content h1 {
+  text-align: left;
+}
+
 .hero-fullwidth .hero-tags,
 .hero-fullwidth .hero-actions {
   justify-content: center;
