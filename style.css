@@ -82,6 +82,8 @@ a {
 .logo-fallback {
   font-weight: 700;
   font-size: 1.05rem;
+  color: var(--foreground);
+  letter-spacing: 0.01em;
 }
 
 .main-nav {
