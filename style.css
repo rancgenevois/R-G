@@ -429,18 +429,21 @@ a {
 .hero-visual,
 .media-card {
   min-height: 420px;
-  background: var(--muted);
+  background: #e4d9ce;
   border: 1px solid var(--border);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
 }
 
 .card,
 .content-card {
   background: #fff;
   border: 1px solid var(--border);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.07);
 }
 
 .content-card {
   padding: 24px;
+  background: #fdfaf7;
 }
 
 .placeholder {
@@ -468,14 +471,23 @@ a {
 .stack-card {
   background: var(--background);
   border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  box-shadow: 0 20px 56px rgba(0, 0, 0, 0.13), 0 2px 8px rgba(0, 0, 0, 0.06);
   padding: 36px;
   position: relative;
   z-index: 10;
 }
 
+/* Première étiquette — beige chaud clair */
 .raised-card {
   z-index: 20;
+  background: #faf4ee;
+}
+
+/* Deuxième étiquette (brown-card) — déjà brun foncé, ok */
+
+/* Troisième étiquette — beige plus soutenu */
+.last-stack .stack-card {
+  background: #e8dfd5;
 }
 
 .brown-card {
