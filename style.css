@@ -211,7 +211,7 @@ a {
   background: #1a1a1a;
   min-height: calc(100vh - 96px);
   display: flex;
-  align-items: center;
+  align-items: stretch;
   box-shadow: none;
 }
 
@@ -236,7 +236,9 @@ a {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 80px 0;
+  padding: 36px 0 64px;
+  display: flex;
+  align-items: stretch;
 }
 
 .hero-fullwidth .hero-content h1 {
@@ -267,11 +269,19 @@ a {
 }
 
 .hero-fullwidth .hero-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   text-align: center;
 }
 
 .hero-fullwidth .hero-content h1 {
   text-align: left;
+}
+
+.hero-fullwidth .hero-tags {
+  margin-top: auto;
+  padding-top: 48px;
 }
 
 .hero-fullwidth .hero-tags,
