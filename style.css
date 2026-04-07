@@ -74,7 +74,7 @@ a {
 }
 
 .logo img {
-  height: 56px;
+  height: 68px;
   width: auto;
   object-fit: contain;
 }
@@ -230,7 +230,7 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.48);
+  background: rgba(0, 0, 0, 0.28);
   z-index: 1;
 }
 
@@ -241,6 +241,13 @@ a {
   padding: 14px 0 56px;
   display: flex;
   align-items: stretch;
+}
+
+/* ── 3 couleurs expertise ── */
+:root {
+  --color-maconnerie: #5c4634;
+  --color-charpente:  #2c6496;
+  --color-pavi:       #5e6368;
 }
 
 /* Le container doit aussi transmettre le flex pour que margin-top:auto fonctionne */
@@ -409,6 +416,8 @@ a {
   background: var(--accent);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  /* Non-cliquable : coins légèrement carrés */
+  border-radius: 8px;
 }
 
 .mini-tag {
@@ -417,6 +426,65 @@ a {
   background: #efe6dc;
   color: #4d3928;
   font-size: 0.92rem;
+  /* Non-cliquable : coins légèrement carrés */
+  border-radius: 8px;
+}
+
+/* ── Couleurs par expertise sur les .tag ── */
+.tag-maconnerie {
+  background: var(--color-maconnerie);
+  border-color: transparent;
+  color: #fff;
+}
+.tag-charpente {
+  background: var(--color-charpente);
+  border-color: transparent;
+  color: #fff;
+}
+.tag-pavi {
+  background: var(--color-pavi);
+  border-color: transparent;
+  color: #fff;
+}
+
+/* ── Couleurs par expertise sur les .mini-tag ── */
+.mini-tag-maconnerie {
+  background: #e8ddd5;
+  color: var(--color-maconnerie);
+}
+.mini-tag-charpente {
+  background: #d4e5f4;
+  color: var(--color-charpente);
+}
+.mini-tag-pavi {
+  background: #e2e4e6;
+  color: var(--color-pavi);
+}
+
+/* ── Couleurs par expertise sur les .nav-pill (liens quick) ── */
+.nav-pill-maconnerie {
+  border-color: var(--color-maconnerie);
+  color: var(--color-maconnerie);
+}
+.nav-pill-maconnerie:hover {
+  background: var(--color-maconnerie);
+  color: #fff;
+}
+.nav-pill-charpente {
+  border-color: var(--color-charpente);
+  color: var(--color-charpente);
+}
+.nav-pill-charpente:hover {
+  background: var(--color-charpente);
+  color: #fff;
+}
+.nav-pill-pavi {
+  border-color: var(--color-pavi);
+  color: var(--color-pavi);
+}
+.nav-pill-pavi:hover {
+  background: var(--color-pavi);
+  color: #fff;
 }
 
 .hero-visual,
@@ -468,6 +536,7 @@ a {
 .first-stack {
   margin-top: -110px;
   padding-top: 110px;
+  background: #1e1812; /* transition sombre depuis le hero */
 }
 
 .stack-card {
@@ -1178,10 +1247,10 @@ a {
 }
 
 .pavi-header-logo-img {
-  height: 36px;
+  height: 52px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  max-width: 220px;
 }
 
 .pavi-header-wordmark {
@@ -1339,7 +1408,6 @@ a {
   width: auto;
   max-width: 420px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
   margin-bottom: 28px;
 }
 
