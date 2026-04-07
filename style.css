@@ -232,6 +232,11 @@ a {
   inset: 0;
   background: rgba(0, 0, 0, 0.28);
   z-index: 1;
+  pointer-events: none; /* ne bloque pas les clics */
+}
+
+.hero-bg-image {
+  pointer-events: none; /* ne bloque pas les clics */
 }
 
 .hero-content-wrapper {
@@ -416,8 +421,14 @@ a {
   background: var(--accent);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  /* Non-cliquable : coins légèrement carrés */
-  border-radius: 8px;
+  /* Cliquable : arrondi pill */
+  border-radius: 999px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+a.tag:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
 }
 
 .mini-tag {
@@ -449,16 +460,16 @@ a {
 
 /* ── Couleurs par expertise sur les .mini-tag ── */
 .mini-tag-maconnerie {
-  background: #e8ddd5;
-  color: var(--color-maconnerie);
+  background: var(--color-maconnerie);
+  color: #fff;
 }
 .mini-tag-charpente {
-  background: #d4e5f4;
-  color: var(--color-charpente);
+  background: var(--color-charpente);
+  color: #fff;
 }
 .mini-tag-pavi {
-  background: #e2e4e6;
-  color: var(--color-pavi);
+  background: var(--color-pavi);
+  color: #fff;
 }
 
 /* ── Couleurs par expertise sur les .nav-pill (liens quick) ── */
@@ -531,6 +542,14 @@ a {
   position: relative;
   z-index: 5;
   padding-bottom: 28px;
+  /* Le fond de la section ne doit pas bloquer les clics sur le hero */
+  pointer-events: none;
+}
+
+/* Mais le contenu des cards reste cliquable */
+.stack-section .stack-card,
+.stack-section .stack-card * {
+  pointer-events: auto;
 }
 
 .first-stack {
@@ -1344,6 +1363,7 @@ a {
 .pavi-hero-bg {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   /* Fond texturé brun foncé, remplaçable par une image de carrelage */
   background:
     repeating-linear-gradient(
@@ -1367,6 +1387,7 @@ a {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.18);
+  pointer-events: none;
 }
 
 .pavi-hero-inner {
