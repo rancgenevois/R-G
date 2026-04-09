@@ -555,7 +555,20 @@ a.tag:hover {
 .first-stack {
   margin-top: -110px;
   padding-top: 110px;
-  background: #1e1812; /* transition sombre depuis le hero */
+  background: transparent;
+}
+
+/* Fond sombre dans la zone de chevauchement avec le hero */
+.first-stack::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 110px;
+  background: linear-gradient(to bottom, #1a1410 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .stack-card {
@@ -1040,6 +1053,84 @@ a.tag:hover {
   }
 }
 
+
+/* ═══════════════════════════════════════════
+   THÈMES COULEUR PAR PAGE D'EXPERTISE
+   Chaque page surcharge --accent → tout suit :
+   boutons, handles slider, borders, eyebrows…
+═══════════════════════════════════════════ */
+
+/* Maçonnerie — brun (couleur par défaut du site, rien à changer) */
+body.page-maconnerie {
+  --accent: var(--color-maconnerie);
+}
+
+/* Charpente couverture — bleu */
+body.page-charpente {
+  --accent: var(--color-charpente);
+}
+
+/* Pavimentum — gris (pavi-page existe déjà pour le header/hero) */
+body.pavi-page {
+  --accent: var(--color-pavi);
+}
+
+/* ── Bandeau coloré sous le header ── */
+body.page-maconnerie .site-header,
+body.page-charpente .site-header,
+body.pavi-page .site-header:not(.pavi-site-header) {
+  border-bottom: 3px solid var(--accent);
+}
+
+/* ── Hero de page teinté avec la couleur expertise ── */
+body.page-maconnerie .page-hero {
+  background: linear-gradient(150deg, #ede5dc 0%, var(--background) 55%);
+  border-left: 5px solid var(--accent);
+}
+body.page-charpente .page-hero {
+  background: linear-gradient(150deg, #d8eaf8 0%, var(--background) 55%);
+  border-left: 5px solid var(--accent);
+}
+body.pavi-page .page-hero {
+  background: linear-gradient(150deg, #e0e2e4 0%, var(--background) 55%);
+  border-left: 5px solid var(--accent);
+}
+
+/* ── Barre colorée en haut de la page principale ── */
+body.page-maconnerie .page,
+body.page-charpente .page,
+body.pavi-page .page {
+  border-top: 4px solid var(--accent);
+}
+
+/* ── Content cards avec accent coloré sur le dessus ── */
+body.page-maconnerie .content-card,
+body.page-charpente .content-card,
+body.pavi-page .content-card {
+  border-top: 3px solid var(--accent);
+}
+
+/* ── Before/after handle reprend la couleur ── */
+/* (already uses var(--accent) via ::before/::after, automatic) */
+
+/* ── Eyebrow coloré ── */
+body.page-maconnerie .eyebrow,
+body.page-charpente .eyebrow,
+body.pavi-page .eyebrow {
+  color: var(--accent);
+  opacity: 1;
+}
+
+/* ── Section divider coloré ── */
+body.page-maconnerie .section {
+  border-top: 1px solid rgba(92, 70, 52, 0.15);
+}
+body.page-charpente .section {
+  border-top: 1px solid rgba(44, 100, 150, 0.15);
+}
+body.pavi-page .section {
+  border-top: 1px solid rgba(94, 99, 104, 0.15);
+}
 
 /* ═══════════════════════════════════════════
    NAV ACTIVE
