@@ -153,14 +153,14 @@ a {
   position: absolute;
   top: calc(100% + 10px);
   left: 0;
-  min-width: 220px;
+  min-width: 240px;
   background: #fff;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(0,0,0,0.08);
   border-radius: 18px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
   padding: 10px;
   display: grid;
-  gap: 8px;
+  gap: 6px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
@@ -171,12 +171,34 @@ a {
 .dropdown-menu a {
   padding: 12px 14px;
   border-radius: 12px;
-  background: #faf7f2;
+  background: transparent;
   font-weight: 600;
+  color: var(--text, #1a1a1a);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .dropdown-menu a:hover {
-  background: var(--muted);
+  background: rgba(0,0,0,0.05);
+  color: var(--accent);
+}
+
+/* Badge Pavimentum dans le dropdown — visible sur fond clair */
+.dropdown-pavi-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 0 9px;
+  border-radius: 999px;
+  background: rgba(94,99,104,0.10);
+  border: 1px solid rgba(94,99,104,0.30);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--color-pavi, #5e6368);
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
 }
 
 .nav-dropdown:hover .dropdown-menu,
@@ -972,9 +994,9 @@ a.tag:hover {
     transform: none;
     box-shadow: none;
     width: 100%;
-    background: transparent;
     border: 0;
     padding: 8px 0 0;
+    border-radius: 12px;
   }
 
   .hero-sticky {
@@ -1041,6 +1063,123 @@ a.tag:hover {
   }
 }
 
+
+/* ═══════════════════════════════════════════
+   CARDS EXPERTISE COLORÉES (expertises.html)
+═══════════════════════════════════════════ */
+.expertise-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.expertise-featured-card {
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.expertise-featured-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.22);
+}
+
+.expertise-card-maconnerie { background: var(--color-maconnerie); }
+.expertise-card-charpente  { background: var(--color-charpente); }
+.expertise-card-pavi       { background: var(--color-pavi); }
+
+.efc-icon {
+  padding: 32px 32px 0;
+}
+
+.efc-icon .icon-image {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.efc-body {
+  padding: 20px 32px;
+  flex: 1;
+}
+
+.efc-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 8px;
+}
+
+.efc-title {
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 14px;
+  line-height: 1.1;
+}
+
+.efc-text {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin: 0 0 20px;
+}
+
+.efc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.efc-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.efc-footer {
+  padding: 0 32px 32px;
+}
+
+.efc-btn {
+  background: #fff !important;
+  border-color: transparent !important;
+  font-weight: 800;
+  width: 100%;
+  justify-content: center;
+}
+
+.expertise-card-maconnerie .efc-btn { color: var(--color-maconnerie); }
+.expertise-card-charpente  .efc-btn { color: var(--color-charpente); }
+.expertise-card-pavi       .efc-btn { color: var(--color-pavi); }
+
+.efc-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .expertise-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ═══════════════════════════════════════════
    THÈMES COULEUR PAR PAGE D'EXPERTISE
