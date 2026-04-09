@@ -47,7 +47,7 @@ if (heroPanel) {
     const end        = heroHeight * FADE_END;
 
     let opacity = 1;
-    if (scrollY >= end)        opacity = 0.30;
+    if (scrollY >= end)        opacity = 0.45;
     else if (scrollY > start)  opacity = 1 - (scrollY - start) / (end - start);
 
     heroPanel.style.opacity = opacity;
