@@ -558,18 +558,6 @@ a.tag:hover {
   background: transparent;
 }
 
-/* Fond sombre dans la zone de chevauchement avec le hero */
-.first-stack::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 110px;
-  background: linear-gradient(to bottom, #1a1410 0%, transparent 100%);
-  pointer-events: none;
-  z-index: 0;
-}
 
 .stack-card {
   background: var(--background);
