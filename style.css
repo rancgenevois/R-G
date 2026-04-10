@@ -37,7 +37,7 @@ a {
 }
 
 .container {
-  width: min(var(--max-width), calc(100% - 36px));
+  width: min(var(--max-width), calc(100% - 96px));
   margin: 0 auto;
 }
 
@@ -318,7 +318,7 @@ a {
 .hero-fullwidth .hero-content {
   display: flex;
   flex-direction: column;
-  flex: 10;
+  flex: 1;
   text-align: center;
 }
 
