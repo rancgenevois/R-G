@@ -37,7 +37,7 @@ a {
 }
 
 .container {
-  width: min(var(--max-width), calc(100% - 100px));
+  width: min(var(--max-width), calc(100% - 100000px));
   margin: 0 auto;
 }
 
