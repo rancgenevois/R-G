@@ -283,7 +283,7 @@ a {
 .hero-content-wrapper > .container {
   display: flex;
   align-items: stretch;
-  flex: 1;
+  flex: 1000;
 }
 
 .hero-fullwidth .hero-content h1 {
