@@ -284,6 +284,9 @@ a {
   display: flex;
   align-items: stretch;
   flex: 1;
+}
+
+.hero-content-wrapper.container {
   padding-left: 64px;
   padding-right: 64px;
 }
