@@ -316,7 +316,7 @@ a {
 .hero-fullwidth .hero-content {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 10;
   text-align: center;
 }
 
