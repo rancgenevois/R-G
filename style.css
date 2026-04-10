@@ -284,6 +284,8 @@ a {
   display: flex;
   align-items: stretch;
   flex: 1;
+  padding-left: 64px;
+  padding-right: 64px;
 }
 
 .hero-fullwidth .hero-content h1 {
