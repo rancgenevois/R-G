@@ -38,7 +38,7 @@ a {
 
 .container {
   width: min(var(--max-width), calc(100% - 32px));
-  margin: 0 auto;
+  margin: 40px auto;
 }
 
 .narrow {
