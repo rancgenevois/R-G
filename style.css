@@ -37,8 +37,8 @@ a {
 }
 
 .container {
-  width: min(var(--max-width), calc(100% - 32px));
-  margin: 40px auto;
+  width: min(var(--max-width), calc(100% - 100px));
+  margin: 0 auto;
 }
 
 .narrow {
