@@ -616,6 +616,62 @@ a.tag:hover {
   color: var(--foreground);
 }
 
+/* Cartes colorées par expertise sur la homepage */
+.brown-card .expertise-card.expertise-card-maconnerie {
+  background: var(--color-maconnerie);
+  color: #fff;
+}
+.brown-card .expertise-card.expertise-card-charpente {
+  background: var(--color-charpente);
+  color: #fff;
+}
+.brown-card .expertise-card.expertise-card-pavi {
+  background: var(--color-pavi);
+  color: #fff;
+}
+
+.brown-card .expertise-card.expertise-card-maconnerie h3,
+.brown-card .expertise-card.expertise-card-charpente h3,
+.brown-card .expertise-card.expertise-card-pavi h3 {
+  color: #fff;
+}
+
+.brown-card .expertise-card.expertise-card-maconnerie p,
+.brown-card .expertise-card.expertise-card-charpente p,
+.brown-card .expertise-card.expertise-card-pavi p {
+  color: rgba(255,255,255,0.82);
+}
+
+.brown-card .expertise-card.expertise-card-maconnerie .icon-circle {
+  background: rgba(255,255,255,0.18);
+}
+.brown-card .expertise-card.expertise-card-charpente .icon-circle {
+  background: rgba(255,255,255,0.18);
+}
+.brown-card .expertise-card.expertise-card-pavi .icon-circle {
+  background: rgba(255,255,255,0.18);
+}
+
+.brown-card .expertise-card.expertise-card-maconnerie .icon-image,
+.brown-card .expertise-card.expertise-card-charpente .icon-image,
+.brown-card .expertise-card.expertise-card-pavi .icon-image {
+  filter: brightness(0) invert(1);
+  opacity: 0.85;
+}
+
+.brown-card .expertise-card.expertise-card-maconnerie .btn-secondary,
+.brown-card .expertise-card.expertise-card-charpente .btn-secondary,
+.brown-card .expertise-card.expertise-card-pavi .btn-secondary {
+  background: #fff;
+  color: inherit;
+  border-color: transparent;
+  font-weight: 700;
+}
+
+.brown-card .expertise-card.expertise-card-maconnerie .btn-secondary { color: var(--color-maconnerie); }
+.brown-card .expertise-card.expertise-card-charpente .btn-secondary  { color: var(--color-charpente); }
+.brown-card .expertise-card.expertise-card-pavi .btn-secondary       { color: var(--color-pavi); }
+
 .brown-card .icon-circle {
   background: #f2ebe3;
 }
