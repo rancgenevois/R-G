@@ -576,33 +576,23 @@ a.tag:hover {
   display: block;
 }
 
-.photo-stack-back {
-  transform: rotate(-6deg) translate(-12%, 6%);
-  z-index: 1;
-  opacity: 0.85;
-}
+/* Cartes du fond vers l'avant — z-index croissant */
+.ps-7 { z-index: 1; transform: rotate(-14deg) translate(-22%, 8%);  opacity: 0.70; }
+.ps-6 { z-index: 2; transform: rotate(-9deg)  translate(-14%, 4%);  opacity: 0.78; }
+.ps-5 { z-index: 3; transform: rotate(-4deg)  translate(-6%,  1%);  opacity: 0.85; }
+.ps-4 { z-index: 4; transform: rotate(0deg)   translate(0%,   0%);  opacity: 0.90; }
+.ps-3 { z-index: 5; transform: rotate(4deg)   translate(6%,   1%);  opacity: 0.93; }
+.ps-2 { z-index: 6; transform: rotate(9deg)   translate(13%,  4%);  opacity: 0.97; }
+.ps-1 { z-index: 7; transform: rotate(14deg)  translate(20%,  8%); }
 
-.photo-stack-mid {
-  transform: rotate(3deg) translate(10%, -4%);
-  z-index: 2;
-  opacity: 0.92;
-}
-
-.photo-stack-front {
-  transform: rotate(-1.5deg) translate(0%, 0%);
-  z-index: 3;
-}
-
-.photo-stack:hover .photo-stack-back {
-  transform: rotate(-9deg) translate(-18%, 10%);
-}
-.photo-stack:hover .photo-stack-mid {
-  transform: rotate(5deg) translate(16%, -7%);
-}
-.photo-stack:hover .photo-stack-front {
-  transform: rotate(-1.5deg) translate(0%, -4%);
-  box-shadow: 0 20px 56px rgba(0,0,0,0.28);
-}
+/* Au survol : les cartes s'écartent en éventail */
+.photo-stack:hover .ps-7 { transform: rotate(-20deg) translate(-34%, 14%); }
+.photo-stack:hover .ps-6 { transform: rotate(-13deg) translate(-22%, 8%);  }
+.photo-stack:hover .ps-5 { transform: rotate(-6deg)  translate(-10%, 2%);  }
+.photo-stack:hover .ps-4 { transform: rotate(0deg)   translate(0%,  -6%);  }
+.photo-stack:hover .ps-3 { transform: rotate(6deg)   translate(10%,  2%);  }
+.photo-stack:hover .ps-2 { transform: rotate(13deg)  translate(21%,  8%);  }
+.photo-stack:hover .ps-1 { transform: rotate(20deg)  translate(32%, 14%); box-shadow: 0 20px 56px rgba(0,0,0,0.28); }
 
 .card,
 .content-card {
