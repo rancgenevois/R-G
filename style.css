@@ -557,16 +557,20 @@ a.tag:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .photo-stack-card {
   position: absolute;
-  width: 72%;
+  width: 78%;
   aspect-ratio: 4/3;
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 12px 40px rgba(0,0,0,0.22);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1),
+              box-shadow 0.4s ease,
+              opacity 0.4s ease;
+  user-select: none;
 }
 
 .photo-stack-card img {
@@ -574,25 +578,37 @@ a.tag:hover {
   height: 100%;
   object-fit: cover;
   display: block;
+  pointer-events: none;
 }
 
-/* Cartes du fond vers l'avant — z-index croissant */
-.ps-7 { z-index: 1; transform: rotate(-14deg) translate(-22%, 8%);  opacity: 0.70; }
-.ps-6 { z-index: 2; transform: rotate(-9deg)  translate(-14%, 4%);  opacity: 0.78; }
-.ps-5 { z-index: 3; transform: rotate(-4deg)  translate(-6%,  1%);  opacity: 0.85; }
-.ps-4 { z-index: 4; transform: rotate(0deg)   translate(0%,   0%);  opacity: 0.90; }
-.ps-3 { z-index: 5; transform: rotate(4deg)   translate(6%,   1%);  opacity: 0.93; }
-.ps-2 { z-index: 6; transform: rotate(9deg)   translate(13%,  4%);  opacity: 0.97; }
-.ps-1 { z-index: 7; transform: rotate(14deg)  translate(20%,  8%); }
+/* Effet de profondeur : les cartes du dessous sont légèrement décalées */
+.photo-stack-card:nth-last-child(2) { transform: translateY(0px)   scale(1.000); z-index: 7; }
+.photo-stack-card:nth-last-child(3) { transform: translateY(8px)   scale(0.975); z-index: 6; }
+.photo-stack-card:nth-last-child(4) { transform: translateY(16px)  scale(0.950); z-index: 5; }
+.photo-stack-card:nth-last-child(5) { transform: translateY(24px)  scale(0.925); z-index: 4; }
+.photo-stack-card:nth-last-child(6) { transform: translateY(32px)  scale(0.900); z-index: 3; }
+.photo-stack-card:nth-last-child(7) { transform: translateY(40px)  scale(0.875); z-index: 2; }
+.photo-stack-card:nth-last-child(8) { transform: translateY(48px)  scale(0.850); z-index: 1; }
 
-/* Au survol : les cartes s'écartent en éventail */
-.photo-stack:hover .ps-7 { transform: rotate(-20deg) translate(-34%, 14%); }
-.photo-stack:hover .ps-6 { transform: rotate(-13deg) translate(-22%, 8%);  }
-.photo-stack:hover .ps-5 { transform: rotate(-6deg)  translate(-10%, 2%);  }
-.photo-stack:hover .ps-4 { transform: rotate(0deg)   translate(0%,  -6%);  }
-.photo-stack:hover .ps-3 { transform: rotate(6deg)   translate(10%,  2%);  }
-.photo-stack:hover .ps-2 { transform: rotate(13deg)  translate(21%,  8%);  }
-.photo-stack:hover .ps-1 { transform: rotate(20deg)  translate(32%, 14%); box-shadow: 0 20px 56px rgba(0,0,0,0.28); }
+/* Carte qui part vers le haut au clic */
+.photo-stack-card.swipe-up {
+  transform: translateY(-130%) scale(1) !important;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10 !important;
+}
+
+/* Indicateur cliquable */
+.photo-stack-hint {
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.78rem;
+  color: var(--muted, #888);
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
 
 .card,
 .content-card {
