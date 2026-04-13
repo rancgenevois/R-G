@@ -71,6 +71,12 @@ a {
   align-items: center;
   gap: 12px;
   min-width: 180px;
+  transition: transform 0.25s ease;
+  transform-origin: left center;
+}
+
+.logo:hover {
+  transform: scale(1.18);
 }
 
 .logo img {
