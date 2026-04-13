@@ -38,7 +38,7 @@ const heroPanel = document.querySelector(".hero-fullwidth");
 
 if (heroPanel) {
   const FADE_START = 0.30;
-  const FADE_END   = 0.65;
+  const FADE_END   = 0.80;
 
   const updateHeroOpacity = () => {
     const heroHeight = heroPanel.offsetHeight;
