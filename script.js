@@ -46,9 +46,10 @@ if (heroPanel) {
     const start      = heroHeight * FADE_START;
     const end        = heroHeight * FADE_END;
 
+    const MIN_OPACITY = 0.30;
     let opacity = 1;
-    if (scrollY >= end)        opacity = 0.45;
-    else if (scrollY > start)  opacity = 1 - (scrollY - start) / (end - start);
+    if (scrollY >= end)        opacity = MIN_OPACITY;
+    else if (scrollY > start)  opacity = 1 - (1 - MIN_OPACITY) * (scrollY - start) / (end - start);
 
     heroPanel.style.opacity = opacity;
   };
@@ -176,6 +177,33 @@ if (galleryImages.length > 0) {
     if (e.key === "Escape")      close();
     if (e.key === "ArrowLeft")   prev();
     if (e.key === "ArrowRight")  next();
+  });
+}
+
+
+/* ═══════════════════════════════════════════
+   PHOTO STACK — clic pour défiler
+═══════════════════════════════════════════ */
+const photoStack = document.getElementById("photoStack");
+
+if (photoStack) {
+  const getCards = () => Array.from(photoStack.querySelectorAll(".photo-stack-card:not(.swipe-up)"));
+
+  photoStack.addEventListener("click", () => {
+    const cards = getCards();
+    if (cards.length === 0) return;
+
+    // La carte du dessus = dernière dans le DOM (z-index le plus élevé)
+    const top = cards[cards.length - 1];
+
+    // Animer vers le haut
+    top.classList.add("swipe-up");
+
+    // Après l'animation, déplacer la carte en bas du stack et la réinitialiser
+    top.addEventListener("transitionend", () => {
+      top.classList.remove("swipe-up");
+      photoStack.insertBefore(top, photoStack.firstChild);
+    }, { once: true });
   });
 }
 
