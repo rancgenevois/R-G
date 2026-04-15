@@ -584,14 +584,14 @@ a.tag:hover {
   pointer-events: none;
 }
 
-/* Effet de profondeur + légères rotations désordonnées */
-.photo-stack-card:nth-last-child(2) { transform: translateY(0px)  scale(1.000) rotate(-1.5deg); z-index: 7; }
-.photo-stack-card:nth-last-child(3) { transform: translateY(7px)  scale(0.970) rotate(3.0deg);  z-index: 6; }
-.photo-stack-card:nth-last-child(4) { transform: translateY(14px) scale(0.940) rotate(-4.5deg); z-index: 5; }
-.photo-stack-card:nth-last-child(5) { transform: translateY(21px) scale(0.910) rotate(2.0deg);  z-index: 4; }
-.photo-stack-card:nth-last-child(6) { transform: translateY(28px) scale(0.880) rotate(-3.0deg); z-index: 3; }
-.photo-stack-card:nth-last-child(7) { transform: translateY(35px) scale(0.850) rotate(5.0deg);  z-index: 2; }
-.photo-stack-card:nth-last-child(8) { transform: translateY(42px) scale(0.820) rotate(-2.5deg); z-index: 1; }
+/* Effet de profondeur + rotations et translations désordonnées */
+.photo-stack-card:nth-last-child(2) { transform: translate(  0px,   0px) scale(1.000) rotate(-1.5deg); z-index: 7; }
+.photo-stack-card:nth-last-child(3) { transform: translate( 14px,  10px) scale(0.968) rotate( 3.5deg); z-index: 6; }
+.photo-stack-card:nth-last-child(4) { transform: translate(-18px,  18px) scale(0.936) rotate(-5.0deg); z-index: 5; }
+.photo-stack-card:nth-last-child(5) { transform: translate( 22px,  26px) scale(0.904) rotate( 2.5deg); z-index: 4; }
+.photo-stack-card:nth-last-child(6) { transform: translate(-10px,  34px) scale(0.872) rotate(-4.0deg); z-index: 3; }
+.photo-stack-card:nth-last-child(7) { transform: translate( 18px,  42px) scale(0.840) rotate( 6.0deg); z-index: 2; }
+.photo-stack-card:nth-last-child(8) { transform: translate(-22px,  50px) scale(0.808) rotate(-3.5deg); z-index: 1; }
 
 /* Carte qui part vers le haut au clic */
 .photo-stack-card.swipe-up {
