@@ -1071,16 +1071,128 @@ a.tag:hover {
 
 /* FOOTER */
 .site-footer {
-  border-top: 1px solid var(--border);
-  padding: 32px 0 40px;
-  margin-top: 24px;
+  background: #2a1f16;
+  color: rgba(255,255,255,0.75);
+  margin-top: 0;
+  border-top: none;
+  padding: 0;
 }
 
-.footer-inner {
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding: 56px 0 48px;
+}
+
+.footer-col {
   display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.footer-col-brand {
+  gap: 16px;
+}
+
+.footer-logo-link { display: inline-block; }
+
+.footer-logo-img {
+  height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-tagline {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.55);
+  margin: 0;
+}
+
+.footer-address {
+  font-style: normal;
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.40);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.footer-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: rgba(255,255,255,0.35);
+  margin: 0 0 16px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.70);
+  font-size: 0.91rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: #fff; }
+
+.footer-contact-item {
+  display: block;
+  color: rgba(255,255,255,0.70);
+  font-size: 0.91rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  transition: color 0.2s;
+}
+
+.footer-contact-item:hover { color: #fff; }
+
+.footer-cta {
+  margin-top: 8px;
+  align-self: flex-start;
+  background: rgba(255,255,255,0.08) !important;
+  color: #fff !important;
+  border-color: rgba(255,255,255,0.20) !important;
+}
+
+.footer-cta:hover {
+  background: rgba(255,255,255,0.16) !important;
+}
+
+/* Badge Pavimentum sur fond sombre (footer) */
+.site-footer .dropdown-pavi-badge {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.85);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 20px 0;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-bottom p {
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.28);
+  margin: 0;
+  text-align: center;
 }
 
 @media (max-width: 900px) {
