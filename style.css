@@ -1873,45 +1873,45 @@ body.pavi-page .section {
 }
 
 .pavi-hero-origin {
-  font-size: 0.78rem;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.6);
 }
 
 .pavi-hero-sep-dot {
   color: rgba(255, 255, 255, 0.35);
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 /* Logo grand format au centre */
 .pavi-hero-logo {
-  height: 80px;
+  height: 140px;
   width: auto;
-  max-width: 420px;
+  max-width: 600px;
   object-fit: contain;
-  margin-bottom: 28px;
+  margin-bottom: 36px;
 }
 
 .pavi-hero-wordmark {
-  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-size: clamp(4rem, 10vw, 8rem);
   font-weight: 900;
   letter-spacing: 0.18em;
   color: #fff;
-  margin: 0 0 28px;
+  margin: 0 0 32px;
   text-transform: uppercase;
   line-height: 1;
 }
 
 /* Claim / tagline */
 .pavi-hero-claim {
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
   color: rgba(255, 255, 255, 0.72);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 600;
-  margin: 0 0 52px;
+  margin: 0 0 56px;
 }
 
 /* Tags en bas du hero */
@@ -1919,7 +1919,7 @@ body.pavi-page .section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
   margin-top: auto;
 }
 
@@ -1927,14 +1927,14 @@ body.pavi-page .section {
 .pavi-tag {
   display: inline-flex;
   align-items: center;
-  min-height: 38px;
-  padding: 0 16px;
+  min-height: 48px;
+  padding: 0 24px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.28);
   color: #fff;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
 }
 
 /* ── Tags version foncée (sur fond clair) ── */
