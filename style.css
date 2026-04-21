@@ -280,9 +280,10 @@ a {
 
 /* ── 3 couleurs expertise ── */
 :root {
-  --color-maconnerie: #b5601e;
-  --color-charpente:  #162444;
-  --color-pavi:       #5e6368;
+  --color-maconnerie:    #b5601e;
+  --color-charpente:     #162444;
+  --color-pavi:          #5e6368;
+  --color-renforcement:  #1e3d2e;
 }
 
 /* Le container doit aussi transmettre le flex pour que margin-top:auto fonctionne */
@@ -514,6 +515,10 @@ a.tag:hover {
   background: var(--color-pavi);
   color: #fff;
 }
+.mini-tag-renforcement {
+  background: var(--color-renforcement);
+  color: #fff;
+}
 
 /* ── Couleurs par expertise sur les .nav-pill (liens quick) ── */
 .nav-pill-maconnerie {
@@ -538,6 +543,14 @@ a.tag:hover {
 }
 .nav-pill-pavi:hover {
   background: var(--color-pavi);
+  color: #fff;
+}
+.nav-pill-renforcement {
+  border-color: var(--color-renforcement);
+  color: var(--color-renforcement);
+}
+.nav-pill-renforcement:hover {
+  background: var(--color-renforcement);
   color: #fff;
 }
 
@@ -707,6 +720,10 @@ a.tag:hover {
   background: var(--color-charpente);
   color: #fff;
 }
+.brown-card .expertise-card.expertise-card-renforcement {
+  background: var(--color-renforcement);
+  color: #fff;
+}
 .brown-card .expertise-card.expertise-card-pavi {
   background: var(--color-pavi);
   color: #fff;
@@ -714,28 +731,28 @@ a.tag:hover {
 
 .brown-card .expertise-card.expertise-card-maconnerie h3,
 .brown-card .expertise-card.expertise-card-charpente h3,
+.brown-card .expertise-card.expertise-card-renforcement h3,
 .brown-card .expertise-card.expertise-card-pavi h3 {
   color: #fff;
 }
 
 .brown-card .expertise-card.expertise-card-maconnerie p,
 .brown-card .expertise-card.expertise-card-charpente p,
+.brown-card .expertise-card.expertise-card-renforcement p,
 .brown-card .expertise-card.expertise-card-pavi p {
   color: rgba(255,255,255,0.82);
 }
 
-.brown-card .expertise-card.expertise-card-maconnerie .icon-circle {
-  background: rgba(255,255,255,0.18);
-}
-.brown-card .expertise-card.expertise-card-charpente .icon-circle {
-  background: rgba(255,255,255,0.18);
-}
+.brown-card .expertise-card.expertise-card-maconnerie .icon-circle,
+.brown-card .expertise-card.expertise-card-charpente .icon-circle,
+.brown-card .expertise-card.expertise-card-renforcement .icon-circle,
 .brown-card .expertise-card.expertise-card-pavi .icon-circle {
   background: rgba(255,255,255,0.18);
 }
 
 .brown-card .expertise-card.expertise-card-maconnerie .icon-image,
 .brown-card .expertise-card.expertise-card-charpente .icon-image,
+.brown-card .expertise-card.expertise-card-renforcement .icon-image,
 .brown-card .expertise-card.expertise-card-pavi .icon-image {
   filter: brightness(0) invert(1);
   opacity: 0.85;
@@ -743,6 +760,7 @@ a.tag:hover {
 
 .brown-card .expertise-card.expertise-card-maconnerie .btn-secondary,
 .brown-card .expertise-card.expertise-card-charpente .btn-secondary,
+.brown-card .expertise-card.expertise-card-renforcement .btn-secondary,
 .brown-card .expertise-card.expertise-card-pavi .btn-secondary {
   background: #fff;
   color: inherit;
@@ -750,9 +768,10 @@ a.tag:hover {
   font-weight: 700;
 }
 
-.brown-card .expertise-card.expertise-card-maconnerie .btn-secondary { color: var(--color-maconnerie); }
-.brown-card .expertise-card.expertise-card-charpente .btn-secondary  { color: var(--color-charpente); }
-.brown-card .expertise-card.expertise-card-pavi .btn-secondary       { color: var(--color-pavi); }
+.brown-card .expertise-card.expertise-card-maconnerie    .btn-secondary { color: var(--color-maconnerie); }
+.brown-card .expertise-card.expertise-card-charpente     .btn-secondary { color: var(--color-charpente); }
+.brown-card .expertise-card.expertise-card-renforcement  .btn-secondary { color: var(--color-renforcement); }
+.brown-card .expertise-card.expertise-card-pavi          .btn-secondary { color: var(--color-pavi); }
 
 .brown-card .icon-circle {
   background: #f2ebe3;
@@ -1341,9 +1360,10 @@ a.tag:hover {
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.22);
 }
 
-.expertise-card-maconnerie { background: var(--color-maconnerie); }
-.expertise-card-charpente  { background: var(--color-charpente); }
-.expertise-card-pavi       { background: var(--color-pavi); }
+.expertise-card-maconnerie    { background: var(--color-maconnerie); }
+.expertise-card-charpente     { background: var(--color-charpente); }
+.expertise-card-renforcement  { background: var(--color-renforcement); }
+.expertise-card-pavi          { background: var(--color-pavi); }
 
 .efc-icon {
   padding: 32px 32px 0;
@@ -1418,9 +1438,10 @@ a.tag:hover {
   justify-content: center;
 }
 
-.expertise-card-maconnerie .efc-btn { color: var(--color-maconnerie); }
-.expertise-card-charpente  .efc-btn { color: var(--color-charpente); }
-.expertise-card-pavi       .efc-btn { color: var(--color-pavi); }
+.expertise-card-maconnerie   .efc-btn { color: var(--color-maconnerie); }
+.expertise-card-charpente    .efc-btn { color: var(--color-charpente); }
+.expertise-card-renforcement .efc-btn { color: var(--color-renforcement); }
+.expertise-card-pavi         .efc-btn { color: var(--color-pavi); }
 
 .efc-btn:hover {
   opacity: 0.92;
@@ -1454,9 +1475,15 @@ body.pavi-page {
   --accent: var(--color-pavi);
 }
 
+/* Renforcement de structure — vert forêt */
+body.page-renforcement {
+  --accent: var(--color-renforcement);
+}
+
 /* ── Bandeau coloré sous le header ── */
 body.page-maconnerie .site-header,
 body.page-charpente .site-header,
+body.page-renforcement .site-header,
 body.pavi-page .site-header:not(.pavi-site-header) {
   border-bottom: 3px solid var(--accent);
 }
@@ -1474,10 +1501,15 @@ body.pavi-page .page-hero {
   background: linear-gradient(150deg, #e0e2e4 0%, var(--background) 55%);
   border-left: 5px solid var(--accent);
 }
+body.page-renforcement .page-hero {
+  background: linear-gradient(150deg, #d2e4da 0%, var(--background) 55%);
+  border-left: 5px solid var(--accent);
+}
 
 /* ── Barre colorée en haut de la page principale ── */
 body.page-maconnerie .page,
 body.page-charpente .page,
+body.page-renforcement .page,
 body.pavi-page .page {
   border-top: 4px solid var(--accent);
 }
@@ -1485,6 +1517,7 @@ body.pavi-page .page {
 /* ── Content cards avec accent coloré sur le dessus ── */
 body.page-maconnerie .content-card,
 body.page-charpente .content-card,
+body.page-renforcement .content-card,
 body.pavi-page .content-card {
   border-top: 3px solid var(--accent);
 }
@@ -1495,6 +1528,7 @@ body.pavi-page .content-card {
 /* ── Eyebrow coloré ── */
 body.page-maconnerie .eyebrow,
 body.page-charpente .eyebrow,
+body.page-renforcement .eyebrow,
 body.pavi-page .eyebrow {
   color: var(--accent);
   opacity: 1;
@@ -1509,6 +1543,9 @@ body.page-charpente .section {
 }
 body.pavi-page .section {
   border-top: 1px solid rgba(94, 99, 104, 0.15);
+}
+body.page-renforcement .section {
+  border-top: 1px solid rgba(30, 61, 46, 0.15);
 }
 
 /* ═══════════════════════════════════════════
