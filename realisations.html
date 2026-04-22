@@ -5,30 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Réalisations | Ranc & Genevois Construction</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      /* ── Filter bar ─────────────────────────────────── */
+      .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 28px;
+      }
+
+      .filter-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 18px;
+        border-radius: 999px;
+        border: 2px solid #ccc;
+        background: transparent;
+        color: #444;
+        font-family: inherit;
+        font-size: 0.88rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.18s, color 0.18s, border-color 0.18s;
+      }
+
+      .filter-btn[data-filter="all"] {
+        border-color: var(--text, #1a1a1a);
+        color: var(--text, #1a1a1a);
+      }
+      .filter-btn[data-filter="all"].active {
+        background: var(--text, #1a1a1a);
+        color: #fff;
+        border-color: var(--text, #1a1a1a);
+      }
+
+      .filter-btn[data-filter="maconnerie"] {
+        border-color: var(--color-maconnerie, #b5601e);
+        color: var(--color-maconnerie, #b5601e);
+      }
+      .filter-btn[data-filter="maconnerie"].active {
+        background: var(--color-maconnerie, #b5601e);
+        color: #fff;
+      }
+
+      .filter-btn[data-filter="charpente"] {
+        border-color: var(--color-charpente, #162444);
+        color: var(--color-charpente, #162444);
+      }
+      .filter-btn[data-filter="charpente"].active {
+        background: var(--color-charpente, #162444);
+        color: #fff;
+      }
+
+      .filter-btn[data-filter="renforcement"] {
+        border-color: var(--color-renforcement, #1e3d2e);
+        color: var(--color-renforcement, #1e3d2e);
+      }
+      .filter-btn[data-filter="renforcement"].active {
+        background: var(--color-renforcement, #1e3d2e);
+        color: #fff;
+      }
+
+      .filter-btn[data-filter="pavi"] {
+        border-color: var(--color-pavi, #5e6368);
+        color: var(--color-pavi, #5e6368);
+      }
+      .filter-btn[data-filter="pavi"].active {
+        background: var(--color-pavi, #5e6368);
+        color: #fff;
+      }
+
+      /* Hidden card state */
+      .project-card.hidden {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
         <a href="index.html" class="logo">
           <img src="images/logo.png" alt="Logo Ranc & Genevois Construction" />
-          <span class="logo-fallback">R&amp;G Construction</span>
+          <span class="logo-fallback">Ranc &amp; Genevois</span>
         </a>
-
         <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
-
         <nav class="main-nav">
           <a href="entreprise.html" class="nav-pill">Entreprise</a>
-
           <div class="nav-dropdown">
             <a href="expertises.html" class="nav-pill">Expertises</a>
-                        <div class="dropdown-menu">
+            <div class="dropdown-menu">
               <a href="maconnerie.html">Maçonnerie</a>
               <a href="toiture.html">Charpente couverture &amp; zinguerie</a>
               <a href="renforcement.html">Renforcement de structure</a>
               <a href="carrelage.html">Carrelage <span class="dropdown-pavi-badge">Pavimentum</span></a>
             </div>
-            </div>
-
+          </div>
           <a href="realisations.html" class="nav-pill">Réalisations</a>
           <a href="contact.html" class="btn btn-small">Contact</a>
         </nav>
@@ -41,176 +113,158 @@
           <p class="eyebrow">Réalisations</p>
           <h1>Nos réalisations</h1>
           <p class="lead">
-            Une sélection de chantiers en maçonnerie, toiture et carrelage,
+            Une sélection de chantiers en maçonnerie, charpente couverture et Pavimentum,
             avec photos avant/après, descriptifs et expertises concernées.
           </p>
+
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">Tous</button>
+            <button class="filter-btn" data-filter="maconnerie">Maçonnerie</button>
+            <button class="filter-btn" data-filter="charpente">Charpente couverture</button>
+            <button class="filter-btn" data-filter="renforcement">Renforcement</button>
+            <button class="filter-btn" data-filter="pavi">Carrelage — Pavimentum</button>
+          </div>
         </div>
       </section>
 
       <section class="section">
         <div class="container realisations-grid">
 
-          <!-- FROMAGERIE PERRIN -->
-          <article class="card project-card project-card-vertical">
+          <!-- MAISON CHASSIGNY-SOUS-DUN -->
+          <article class="card project-card project-card-vertical" data-expertise="charpente">
             <div class="project-content">
-              <h2><a href="toiture.html">Fromagerie Perrin</a></h2>
-
+              <h2><a href="toiture.html">Maison Chassigny-Sous-Dun</a></h2>
               <div class="project-tags">
-                <span class="mini-tag">Toiture</span>
-                <span class="mini-tag">Zinguerie</span>
-                <span class="mini-tag">Rénovation d’ouvrage</span>
+                <span class="mini-tag mini-tag-charpente">Charpente couverture</span>
+                <span class="mini-tag mini-tag-charpente">Zinguerie</span>
+                <span class="mini-tag">Rénovation d'ouvrage</span>
               </div>
-
-              <p>Réfection de toiture, zinguerie et rénovation de l’ouvrage.</p>
+              <p>Réfection de couverture, zinguerie et rénovation de l'ouvrage.</p>
             </div>
-
             <div class="before-after-block">
               <div class="before-after-column">
                 <h3 class="before-after-title">Avant</h3>
                 <div class="project-gallery gallery-1">
-                  <img src="images/realisations/perrin-avant-1.jpeg" alt="Fromagerie Perrin avant travaux" />
+                  <img src="images/realisations/perrin-avant-1.jpg" alt="Maison Chassigny-Sous-Dun avant travaux" />
                 </div>
               </div>
-
               <div class="before-after-column">
                 <h3 class="before-after-title">Après</h3>
                 <div class="project-gallery gallery-1">
-                  <img src="images/realisations/perrin-apres-1.jpeg" alt="Fromagerie Perrin après travaux" />
+                  <img src="images/realisations/perrin-apres-1.jpg" alt="Maison Chassigny-Sous-Dun après travaux" />
                 </div>
               </div>
             </div>
-
             <div class="project-content project-footer">
-              <a href="toiture.html" class="btn btn-secondary section-btn">Voir l’expertise</a>
+              <a href="toiture.html" class="btn btn-secondary section-btn">Voir l'expertise</a>
             </div>
           </article>
 
-          <!-- MAISON MARCEL -->
-          <article class="card project-card project-card-vertical">
+          <!-- MAISON CHAPONOST -->
+          <article class="card project-card project-card-vertical" data-expertise="maconnerie">
             <div class="project-content">
-              <h2><a href="maconnerie.html">Maison Marcel</a></h2>
-
+              <h2><a href="maconnerie.html">Maison Chaponost</a></h2>
               <div class="project-tags">
-                <span class="mini-tag">Maçonnerie</span>
-                <span class="mini-tag">Patrimoine</span>
-                <span class="mini-tag">Sous-œuvre</span>
+                <span class="mini-tag mini-tag-maconnerie">Maçonnerie</span>
+                <span class="mini-tag mini-tag-maconnerie">Patrimoine</span>
+                <span class="mini-tag mini-tag-maconnerie">Sous-œuvre</span>
               </div>
-
               <p>Façades, escalier, joints de pierre et ouvertures en sous-œuvre.</p>
             </div>
-
             <div class="before-after-block">
               <div class="before-after-column">
                 <h3 class="before-after-title">Avant</h3>
                 <div class="project-gallery gallery-1">
-                  <img src="images/realisations/marcel-avant-1.jpg" alt="Maison Marcel avant travaux" />
+                  <img src="images/realisations/marcel-avant-1.jpg" alt="Maison Chaponost avant travaux" />
                 </div>
               </div>
-
               <div class="before-after-column">
                 <h3 class="before-after-title">Après</h3>
                 <div class="project-gallery gallery-2">
-                  <img src="images/realisations/marcel-apres-1.jpg" alt="Maison Marcel après travaux 1" />
-                  <img src="images/realisations/marcel-apres-2.jpg" alt="Maison Marcel après travaux 2" />
+                  <img src="images/realisations/marcel-apres-1.jpg" alt="Maison Chaponost après travaux 1" />
+                  <img src="images/realisations/marcel-apres-2.jpg" alt="Maison Chaponost après travaux 2" />
                 </div>
               </div>
             </div>
-
             <div class="project-content project-footer">
-              <a href="maconnerie.html" class="btn btn-secondary section-btn">Voir l’expertise</a>
+              <a href="maconnerie.html" class="btn btn-secondary section-btn">Voir l'expertise</a>
             </div>
           </article>
 
           <!-- MAISON FOMPEYRINE -->
-          <article class="card project-card project-card-vertical">
+          <article class="card project-card project-card-vertical" data-expertise="charpente">
             <div class="project-content">
-              <h2><a href="toiture.html">Maison FOMPEYRINE</a></h2>
-
+              <h2><a href="toiture.html">Maison Fompeyrine</a></h2>
               <div class="project-tags">
-                <span class="mini-tag">Toiture</span>
-                <span class="mini-tag">Zinguerie</span>
-                <span class="mini-tag">Rénovation d’ouvrage</span>
+                <span class="mini-tag mini-tag-charpente">Charpente couverture</span>
+                <span class="mini-tag mini-tag-charpente">Zinguerie</span>
+                <span class="mini-tag">Rénovation d'ouvrage</span>
               </div>
-
-              <p>Réfection de toiture, zinguerie et rénovation de l’ouvrage.</p>
+              <p>Réfection de couverture, zinguerie et rénovation de l'ouvrage.</p>
             </div>
-
             <div class="before-after-block">
               <div class="before-after-column">
                 <h3 class="before-after-title">Avant</h3>
                 <div class="project-gallery gallery-2">
-                  <img src="images/realisations/fompeyrine-avant-1.jpg" alt="Maison FOMPEYRINE avant travaux 1" />
-                  <img src="images/realisations/fompeyrine-avant-2.jpg" alt="Maison FOMPEYRINE avant travaux 2" />
+                  <img src="images/realisations/fompeyrine-avant-1.jpg" alt="Maison Fompeyrine avant travaux 1" />
+                  <img src="images/realisations/fompeyrine-avant-2.jpg" alt="Maison Fompeyrine avant travaux 2" />
                 </div>
               </div>
-
               <div class="before-after-column">
                 <h3 class="before-after-title">Après</h3>
                 <div class="project-gallery gallery-1">
-                  <img src="images/realisations/fompeyrine-apres-2.jpg" alt="Maison FOMPEYRINE après travaux" />
+                  <img src="images/realisations/fompeyrine-apres-2.jpg" alt="Maison Fompeyrine après travaux" />
                 </div>
               </div>
             </div>
-
             <div class="project-content project-footer">
-              <a href="toiture.html" class="btn btn-secondary section-btn">Voir l’expertise</a>
+              <a href="toiture.html" class="btn btn-secondary section-btn">Voir l'expertise</a>
             </div>
           </article>
 
           <!-- FERME CORZY -->
-          <article class="card project-card project-card-vertical">
+          <article class="card project-card project-card-vertical" data-expertise="pavi">
             <div class="project-content">
               <h2><a href="carrelage.html">Ferme Corzy</a></h2>
-
               <div class="project-tags">
-                <span class="mini-tag">Carrelage</span>
-                <span class="mini-tag">Faïence</span>
+                <span class="mini-tag mini-tag-pavi">Carrelage — Pavimentum</span>
+                <span class="mini-tag mini-tag-pavi">Faïence</span>
                 <span class="mini-tag">Rénovation intérieure</span>
               </div>
-
               <p>Chantier de carrelage et finitions avec visuels avant/après.</p>
             </div>
-
             <div class="before-after-block">
               <div class="before-after-column">
                 <h3 class="before-after-title">Avant</h3>
                 <div class="project-gallery gallery-2">
                   <img src="images/realisations/corzy-avant-1.jpg" alt="Ferme Corzy avant travaux 1" />
-                  <img src="images/realisations/corzy-avant-2.jpeg" alt="Ferme Corzy avant travaux 2" />
+                  <img src="images/realisations/corzy-avant-2.jpg" alt="Ferme Corzy avant travaux 2" />
                 </div>
               </div>
-
               <div class="before-after-column">
                 <h3 class="before-after-title">Après</h3>
                 <div class="project-gallery gallery-2">
-                  <img src="images/realisations/corzy-apres-1.jpeg" alt="Ferme Corzy après travaux 1" />
-                  <img src="images/realisations/corzy-apres-2.jpeg" alt="Ferme Corzy après travaux 2" />
+                  <img src="images/realisations/corzy-apres-1.jpg" alt="Ferme Corzy après travaux 1" />
+                  <img src="images/realisations/corzy-apres-2.jpg" alt="Ferme Corzy après travaux 2" />
                 </div>
               </div>
             </div>
-
             <div class="project-content project-footer">
-              <a href="carrelage.html" class="btn btn-secondary section-btn">Voir l’expertise</a>
+              <a href="carrelage.html" class="btn btn-secondary section-btn">Voir l'expertise</a>
             </div>
           </article>
 
           <!-- MME MONGE -->
-          <article class="card project-card project-card-vertical">
+          <article class="card project-card project-card-vertical" data-expertise="pavi">
             <div class="project-content">
-              <h2><a href="carrelage.html">Mme MONGE</a></h2>
-
+              <h2><a href="carrelage.html">Mme Monge</a></h2>
               <div class="project-tags">
-                <span class="mini-tag">Carrelage</span>
-                <span class="mini-tag">Faïence</span>
+                <span class="mini-tag mini-tag-pavi">Carrelage — Pavimentum</span>
+                <span class="mini-tag mini-tag-pavi">Faïence</span>
                 <span class="mini-tag">Salle de douche</span>
               </div>
-
-              <p>
-                Réfection totale d’une douche : démolition préalable, remise en état,
-                imperméabilisation, carrelage au sol, faïence murale, niche et caniveau.
-              </p>
+              <p>Réfection totale d'une douche : démolition préalable, remise en état, imperméabilisation, carrelage au sol, faïence murale, niche et caniveau.</p>
             </div>
-
             <div class="before-after-block">
               <div class="before-after-column">
                 <h3 class="before-after-title">Avant</h3>
@@ -219,7 +273,6 @@
                   <img src="images/realisations/monge-avant-2.jpg" alt="Mme Monge avant travaux 2" />
                 </div>
               </div>
-
               <div class="before-after-column">
                 <h3 class="before-after-title">Après</h3>
                 <div class="project-gallery gallery-2">
@@ -228,29 +281,22 @@
                 </div>
               </div>
             </div>
-
             <div class="project-content project-footer">
-              <a href="carrelage.html" class="btn btn-secondary section-btn">Voir l’expertise</a>
+              <a href="carrelage.html" class="btn btn-secondary section-btn">Voir l'expertise</a>
             </div>
           </article>
 
           <!-- MME VALFER -->
-          <article class="card project-card project-card-vertical">
+          <article class="card project-card project-card-vertical" data-expertise="pavi">
             <div class="project-content">
-              <h2><a href="carrelage.html">Mme VALFER</a></h2>
-
+              <h2><a href="carrelage.html">Mme Valfer</a></h2>
               <div class="project-tags">
-                <span class="mini-tag">Carrelage</span>
-                <span class="mini-tag">Faïence</span>
+                <span class="mini-tag mini-tag-pavi">Carrelage — Pavimentum</span>
+                <span class="mini-tag mini-tag-pavi">Faïence</span>
                 <span class="mini-tag">Salle de douche</span>
               </div>
-
-              <p>
-                Réfection totale d’une douche : démolition, imperméabilisation,
-                grands carreaux, faïence, pointe de diamant pour bondes et finitions.
-              </p>
+              <p>Réfection totale d'une douche : démolition, imperméabilisation, grands carreaux, faïence, pointe de diamant pour bondes et finitions.</p>
             </div>
-
             <div class="before-after-block">
               <div class="before-after-column">
                 <h3 class="before-after-title">Avant</h3>
@@ -259,7 +305,6 @@
                   <img src="images/realisations/valfer-avant-2.jpg" alt="Mme Valfer avant travaux 2" />
                 </div>
               </div>
-
               <div class="before-after-column">
                 <h3 class="before-after-title">Après</h3>
                 <div class="project-gallery gallery-2">
@@ -268,9 +313,8 @@
                 </div>
               </div>
             </div>
-
             <div class="project-content project-footer">
-              <a href="carrelage.html" class="btn btn-secondary section-btn">Voir l’expertise</a>
+              <a href="carrelage.html" class="btn btn-secondary section-btn">Voir l'expertise</a>
             </div>
           </article>
 
@@ -279,18 +323,73 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <div>
-          <strong>Ranc &amp; Genevois Construction</strong>
-          <p>41 chemin du Pras, 69350 La Mulatière</p>
+      <div class="container footer-grid">
+        <div class="footer-col footer-col-brand">
+          <a href="index.html" class="footer-logo-link">
+            <img src="images/logo.png" alt="Logo Ranc &amp; Genevois Construction" class="footer-logo-img" />
+          </a>
+          <p class="footer-tagline">Maçonnerie, charpente couverture, renforcement de structure et Carrelage — Pavimentum<br>en région lyonnaise.</p>
+          <address class="footer-address">41 chemin du Pras<br>69350 La Mulatière</address>
         </div>
-        <div>
-          <p>04 78 59 23 14</p>
-          <p>contact@ranc-genevois.com</p>
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="entreprise.html">Entreprise</a></li>
+            <li><a href="expertises.html">Expertises</a></li>
+            <li><a href="realisations.html">Réalisations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Expertises</h4>
+          <ul class="footer-links">
+            <li><a href="maconnerie.html">Maçonnerie</a></li>
+            <li><a href="toiture.html">Charpente couverture &amp; zinguerie</a></li>
+            <li><a href="renforcement.html">Renforcement de structure</a></li>
+            <li><a href="carrelage.html">Carrelage <span class="dropdown-pavi-badge">Pavimentum</span></a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Contact</h4>
+          <a href="tel:+33478592314" class="footer-contact-item">04 78 59 23 14</a>
+          <a href="mailto:contact@ranc-genevois.com" class="footer-contact-item">contact@ranc-genevois.com</a>
+          <a href="contact.html" class="btn btn-small footer-cta">Nous contacter</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p>&copy; 2025 Ranc &amp; Genevois Construction — Tous droits réservés</p>
         </div>
       </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+      // ── Filter logic ─────────────────────────────────────────────
+      (function () {
+        const buttons = document.querySelectorAll('.filter-btn');
+        const cards   = document.querySelectorAll('.project-card[data-expertise]');
+
+        buttons.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            const filter = btn.dataset.filter;
+
+            // Update active state on buttons
+            buttons.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+
+            // Show / hide cards
+            cards.forEach(function (card) {
+              if (filter === 'all' || card.dataset.expertise === filter) {
+                card.classList.remove('hidden');
+              } else {
+                card.classList.add('hidden');
+              }
+            });
+          });
+        });
+      })();
+    </script>
   </body>
 </html>
