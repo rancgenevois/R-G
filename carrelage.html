@@ -3,138 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrelage — Pavimentum | Ranc & Genevois Construction</title>
+    <title>Carrelage | Ranc & Genevois Construction</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="pavi-page">
-
-    <!-- HEADER SPÉCIAL PAVIMENTUM -->
-    <header class="site-header pavi-site-header">
+  <body>
+    <header class="site-header">
       <div class="container header-inner">
-
-        <!-- CO-BRANDING logo : R&G × PAVIMENTUM -->
-        <a href="index.html" class="logo pavi-cobranding">
-          <img
-            src="images/logo.png"
-            alt="Ranc & Genevois"
-            class="rg-logo-small"
-          />
-          <span class="pavi-header-sep">×</span>
-          <span class="pavi-header-brand">
-            <img
-              src="images/pavimentum-logo.png"
-              alt="Pavimentum"
-              class="pavi-header-logo-img"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-            />
-            <span class="pavi-header-wordmark" style="display:none;">PAVIMENTUM</span>
-          </span>
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="Logo Ranc & Genevois Construction" />
+          <span class="logo-fallback">R&amp;G Construction</span>
         </a>
 
-        <button class="menu-toggle pavi-toggle" aria-label="Ouvrir le menu">☰</button>
+        <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
 
         <nav class="main-nav">
-          <a href="entreprise.html" class="nav-pill pavi-nav-pill">Entreprise</a>
+          <a href="entreprise.html" class="nav-pill">Entreprise</a>
 
           <div class="nav-dropdown">
-            <a href="expertises.html" class="nav-pill pavi-nav-pill">Expertises</a>
-            <div class="dropdown-menu pavi-dropdown">
+            <a href="expertises.html" class="nav-pill">Expertises</a>
+                        <div class="dropdown-menu">
               <a href="maconnerie.html">Maçonnerie</a>
-              <a href="toiture.html">Charpente couverture</a>
-              <a href="carrelage.html" class="pavi-active-link">
-                Carrelage
-                <span class="pavi-nav-badge">Pavimentum</span>
-              </a>
+              <a href="toiture.html">Charpente couverture &amp; zinguerie</a>
+              <a href="renforcement.html">Renforcement de structure</a>
+              <a href="carrelage.html">Carrelage <span class="dropdown-pavi-badge">Pavimentum</span></a>
             </div>
-          </div>
+            </div>
 
-          <a href="realisations.html" class="nav-pill pavi-nav-pill">Réalisations</a>
-          <a href="contact.html" class="btn pavi-btn-header btn-small">Contact</a>
+          <a href="realisations.html" class="nav-pill">Réalisations</a>
+          <a href="contact.html" class="btn btn-small">Contact</a>
         </nav>
       </div>
     </header>
 
     <main class="page">
-
-      <!-- HERO PAVIMENTUM PLEINE LARGEUR -->
-      <section class="pavi-hero">
-        <div class="pavi-hero-bg"></div>
-        <div class="pavi-hero-overlay"></div>
-        <div class="container pavi-hero-inner">
-
-          <div class="pavi-hero-top">
-            <span class="pavi-hero-origin">Ranc &amp; Genevois Construction</span>
-            <span class="pavi-hero-sep-dot">·</span>
-            <span class="pavi-hero-origin">Marque exclusive</span>
-          </div>
-
-          <div class="pavi-hero-center">
-            <!-- Logo Pavimentum grand format -->
-            <img
-              src="images/pavimentum-logo.png"
-              alt="Pavimentum"
-              class="pavi-hero-logo"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-            />
-            <h1 class="pavi-hero-wordmark" style="display:none;">PAVIMENTUM</h1>
-
-            <p class="pavi-hero-claim">
-              Carrelage, faïence &amp; matériaux de finition
-            </p>
-          </div>
-
-          <div class="pavi-hero-bottom">
-            <span class="pavi-tag">Carrelage</span>
-            <span class="pavi-tag">Faïence</span>
-            <span class="pavi-tag">Grands formats</span>
-            <span class="pavi-tag">Pose & fourniture</span>
-          </div>
-
+      <section class="page-hero">
+        <div class="container narrow">
+          <p class="eyebrow">Expertise</p>
+          <h1>Carrelage</h1>
+          <p class="lead">
+            L’entreprise intervient également sur les projets de carrelage,
+            faïence et finitions pour des rénovations intérieures et des espaces
+            techniques.
+          </p>
         </div>
       </section>
 
-      <!-- PRÉSENTATION PAVIMENTUM -->
       <section class="section">
-        <div class="container split-grid">
-          <div class="text-block reveal">
-            <p class="eyebrow">La marque</p>
-            <h2>Une sélection dédiée,<br>de A jusqu'à la pose</h2>
-            <p>
-              Pavimentum est la marque de carrelage développée en propre par Ranc &amp; Genevois
-              Construction. Elle rassemble une gamme de matériaux — carreaux, faïences,
-              mosaïques, accessoires — rigoureusement sélectionnés pour leur qualité,
-              leur durabilité et leur cohérence avec les projets de rénovation du bâti ancien.
-            </p>
-            <p>
-              Cette offre intégrée permet un accompagnement complet : conseil au choix
-              des matériaux, fourniture depuis notre gamme et pose par nos équipes.
-              Une seule entreprise, une seule garantie.
-            </p>
-            <div class="pavi-tags">
-              <span class="pavi-tag pavi-tag-dark">Sélection exclusive</span>
-              <span class="pavi-tag pavi-tag-dark">Conseil matériaux</span>
-              <span class="pavi-tag pavi-tag-dark">Fourniture & pose</span>
-              <span class="pavi-tag pavi-tag-dark">Garantie complète</span>
-            </div>
-            <a href="contact.html" class="btn section-btn">Renseignez-vous</a>
-          </div>
-
-          <div class="media-card pavi-media-card reveal">
-            <img src="images/pavimentum/pavi-ambiance.jpg" alt="Réalisation Pavimentum carrelage" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);" />
-          </div>
-        </div>
-      </section>
-
-      <!-- AVANT / APRÈS + TECHNIQUE DE POSE -->
-      <section class="section" style="padding-top: 0;">
-        <div class="container">
-          <div class="pavi-section-label">
-            <span class="pavi-section-badge">Réalisations</span>
-            <h2 class="pavi-section-title">Notre savoir-faire</h2>
-          </div>
-        </div>
         <div class="container split-grid expertise-layout">
-          <div class="before-after-slider portrait-slider reveal" data-before-after>
+          <div class="before-after-slider portrait-slider" data-before-after>
             <div class="before-after-label before-label">Avant</div>
             <div class="before-after-label after-label">Après</div>
 
@@ -166,7 +82,7 @@
             />
           </div>
 
-          <div class="text-block reveal">
+          <div class="text-block">
             <h2>Finitions intérieures</h2>
 
             <div class="mini-tags">
@@ -176,16 +92,37 @@
             </div>
 
             <p>
-              Nos équipes interviennent sur tous types d'espaces — salles de bain,
-              douches, cuisines, séjours et espaces techniques. Chaque chantier est
-              précédé d'une étude du support et d'un choix raisonné des matériaux
-              selon les contraintes d'usage, d'humidité et d'esthétique.
+              Cette expertise couvre les travaux de carrelage, de faïence et de
+              finitions pour les espaces intérieurs, avec une attention portée à
+              la préparation des supports, à la qualité de pose et à la cohérence
+              esthétique de l’ensemble.
             </p>
 
             <p>
-              La maîtrise des techniques de pose — grands formats, joint fin,
-              chevrons, pose décalée — permet d'obtenir un résultat soigné
-              et durable, quel que soit le style recherché.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              tincidunt sem vel mi efficitur, vitae consequat urna laoreet.
+              Suspendisse eleifend pretium neque, vitae varius nisl venenatis at.
+              Aliquam at turpis sed nulla euismod efficitur. Vestibulum ante ipsum
+              primis in faucibus orci luctus et ultrices posuere cubilia curae.
+            </p>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              pellentesque nisl eget risus facilisis, vel rhoncus risus faucibus.
+              Aliquam nec nibh non risus pulvinar tristique. Donec et felis sed
+              magna scelerisque feugiat. Nam congue, nibh non maximus posuere,
+              neque eros tristique purus, sit amet suscipit sapien urna sit amet
+              ligula.
+            </p>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+              egestas, lorem a feugiat tempus, massa risus luctus magna, vitae
+              dapibus turpis dui nec justo. Nunc volutpat, lorem ac pulvinar
+              luctus, velit massa posuere dui, vitae posuere nunc tortor ut est.
+              Vivamus non dui non erat porttitor blandit. Donec eleifend, arcu
+              at cursus varius, turpis leo convallis odio, vitae vulputate magna
+              arcu sit amet sapien.
             </p>
 
             <a href="realisations.html" class="btn btn-secondary section-btn">Voir les réalisations</a>
@@ -193,7 +130,6 @@
         </div>
       </section>
 
-      <!-- AUTRES EXPERTISES -->
       <section class="section">
         <div class="container">
           <div class="content-card">
@@ -201,24 +137,18 @@
             <h2>Découvrir aussi</h2>
             <div class="quick-links">
               <a href="maconnerie.html" class="nav-pill">Maçonnerie</a>
-              <a href="toiture.html" class="nav-pill">Charpente couverture</a>
+              <a href="toiture.html" class="nav-pill">Toiture</a>
             </div>
           </div>
         </div>
       </section>
-
     </main>
 
-    <!-- FOOTER PAVIMENTUM -->
-    <footer class="site-footer pavi-footer">
+    <footer class="site-footer">
       <div class="container footer-inner">
         <div>
           <strong>Ranc &amp; Genevois Construction</strong>
           <p>41 chemin du Pras, 69350 La Mulatière</p>
-        </div>
-        <div class="pavi-footer-brand">
-          <span class="pavi-footer-name">PAVIMENTUM</span>
-          <span class="pavi-footer-sub">Marque exclusive de carrelage</span>
         </div>
         <div>
           <p>04 78 59 23 14</p>
