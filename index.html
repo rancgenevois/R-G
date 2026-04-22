@@ -6,7 +6,7 @@
     <title>Ranc & Genevois Construction</title>
     <meta
       name="description"
-      content="Entreprise de maçonnerie, charpente couverture, renforcement de structure et carrelage en région lyonnaise."
+      content="Entreprise de maçonnerie, charpente couverture et carrelage en région lyonnaise."
     />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -40,54 +40,67 @@
     </header>
 
     <main>
-      <section class="hero-shell hero-sticky">
-        <div class="container">
-          <div class="hero-panel">
-            <div class="hero-grid">
-              <div class="hero-content">
-                <p class="eyebrow">Ranc &amp; Genevois Construction</p>
-                <h1>Maçonnerie, charpente couverture, renforcement de structure et Carrelage — Pavimentum pour la rénovation du bâti ancien</h1>
-                <p class="hero-text">
-                  Entreprise de terrain implantée en région lyonnaise, R&amp;G Construction
-                  intervient sur les projets de rénovation, restauration patrimoniale
-                  et travaux techniques avec une attention forte portée à la qualité
-                  d'exécution et aux finitions.
-                </p>
+      <!-- HERO PLEINE LARGEUR -->
+      <section class="hero-sticky">
+        <div class="hero-panel hero-fullwidth">
+          <img
+            src="images/hero.jpg"
+            alt="Chantier Ranc & Genevois Construction"
+            class="hero-bg-image"
+          />
+          <div class="hero-overlay"></div>
+          <div class="container hero-content-wrapper">
+            <div class="hero-content">
+              <p class="eyebrow">Ranc &amp; Genevois Construction</p>
+              <h1>Maçonnerie, charpente couverture et Carrelage — Pavimentum pour la rénovation du bâti ancien</h1>
+              <p class="hero-text">
+                Entreprise de terrain implantée en région lyonnaise,<br>
+                Ranc &amp; Genevois intervient sur les projets de rénovation, restauration patrimoniale
+                et travaux techniques avec une attention forte portée à la qualité d'exécution et aux finitions.
+              </p>
 
-                <div class="hero-tags">
-                  <span class="tag">Maçonnerie</span>
-                  <span class="tag">Charpente couverture</span>
-                  <span class="tag">Renforcement</span>
-                  <a href="carrelage.html" class="tag tag-pavi">Carrelage <span class="dropdown-pavi-badge">Pavimentum</span></a>
-                </div>
-
-                <div class="hero-actions">
-                  <a href="contact.html" class="btn">Nous contacter</a>
-                  <a href="expertises.html" class="btn btn-secondary">Découvrir nos expertises</a>
-                </div>
+              <div class="hero-tags">
+                <a href="maconnerie.html" class="tag tag-maconnerie">Maçonnerie</a>
+                <a href="toiture.html" class="tag tag-charpente">Charpente couverture</a>
+                <a href="carrelage.html" class="tag tag-pavi">Carrelage <span class="dropdown-pavi-badge">Pavimentum</span></a>
               </div>
 
-              <div class="hero-visual">
-                <div class="placeholder">Ajoute ici une photo chantier</div>
+              <div class="hero-actions">
+                <a href="contact.html" class="btn">Nous contacter</a>
+                <a href="expertises.html" class="btn btn-secondary">Découvrir nos expertises</a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- SECTIONS QUI DÉFILENT PAR-DESSUS -->
       <section class="stack-section first-stack">
         <div class="container">
           <div class="stack-card split-grid raised-card">
-
-            <div id="photoStack" class="photo-stack">
-              <div class="photo-stack-card"><img src="images/entreprise/stack-1.jpg" alt="Chantier R&G 1" style="width:100%;height:100%;object-fit:cover;" /></div>
-              <div class="photo-stack-card"><img src="images/entreprise/stack-2.jpg" alt="Chantier R&G 2" style="width:100%;height:100%;object-fit:cover;" /></div>
-              <div class="photo-stack-card"><img src="images/entreprise/stack-3.jpg" alt="Chantier R&G 3" style="width:100%;height:100%;object-fit:cover;" /></div>
-              <div class="photo-stack-card"><img src="images/entreprise/stack-4.jpg" alt="Chantier R&G 4" style="width:100%;height:100%;object-fit:cover;" /></div>
-              <div class="photo-stack-card"><img src="images/entreprise/stack-5.jpg" alt="Chantier R&G 5" style="width:100%;height:100%;object-fit:cover;" /></div>
-              <div class="photo-stack-card"><img src="images/entreprise/stack-6.jpg" alt="Chantier R&G 6" style="width:100%;height:100%;object-fit:cover;" /></div>
-              <div class="photo-stack-card"><img src="images/entreprise/stack-7.jpg" alt="Chantier R&G 7" style="width:100%;height:100%;object-fit:cover;" /></div>
-              <p class="photo-stack-hint">Cliquer pour parcourir →</p>
+            <div class="photo-stack" id="photoStack">
+              <div class="photo-stack-card" data-index="7">
+                <img src="images/entreprise/stack-7.jpg" alt="Chantier Ranc & Genevois" />
+              </div>
+              <div class="photo-stack-card" data-index="6">
+                <img src="images/entreprise/stack-6.jpg" alt="Chantier Ranc & Genevois" />
+              </div>
+              <div class="photo-stack-card" data-index="5">
+                <img src="images/entreprise/stack-5.jpg" alt="Chantier Ranc & Genevois" />
+              </div>
+              <div class="photo-stack-card" data-index="4">
+                <img src="images/entreprise/stack-4.jpg" alt="Chantier Ranc & Genevois" />
+              </div>
+              <div class="photo-stack-card" data-index="3">
+                <img src="images/entreprise/stack-3.jpg" alt="Chantier Ranc & Genevois" />
+              </div>
+              <div class="photo-stack-card" data-index="2">
+                <img src="images/entreprise/stack-2.jpg" alt="Équipe Ranc & Genevois" />
+              </div>
+              <div class="photo-stack-card" data-index="1">
+                <img src="images/entreprise/stack-1.jpg" alt="Réalisation Ranc & Genevois" />
+              </div>
+              <div class="photo-stack-hint">Cliquer pour défiler →</div>
             </div>
 
             <div class="text-block">
@@ -138,7 +151,7 @@
                 <div class="icon-circle">
                   <img src="images/icons/toiture.png" alt="Icône charpente couverture" class="icon-image" />
                 </div>
-                <h3>Charpente couverture &amp; zinguerie</h3>
+                <h3>Charpente couverture</h3>
                 <p>
                   Réfection de toiture, couverture, zinguerie et rénovation
                   d'ouvrages existants.
@@ -146,26 +159,14 @@
                 <a href="toiture.html" class="btn btn-secondary section-btn">Découvrir</a>
               </article>
 
-              <article class="card expertise-card expertise-card-renforcement">
-                <div class="icon-circle">
-                  <img src="images/icons/renforcement.png" alt="Icône renforcement de structure" class="icon-image" />
-                </div>
-                <h3>Renforcement de structure</h3>
-                <p>
-                  Consolidation d'ouvrages fragilisés, reprises de fondations
-                  et renforcement de murs porteurs.
-                </p>
-                <a href="renforcement.html" class="btn btn-secondary section-btn">Découvrir</a>
-              </article>
-
               <article class="card expertise-card expertise-card-pavi">
                 <div class="icon-circle">
-                  <img src="images/icons/carrelage.png" alt="Icône carrelage Pavimentum" class="icon-image" />
+                  <img src="images/icons/carrelage.png" alt="Icône Pavimentum" class="icon-image" />
                 </div>
                 <h3>Carrelage <span class="dropdown-pavi-badge">Pavimentum</span></h3>
                 <p>
                   Carrelage, faïence et finitions pour les projets de rénovation
-                  intérieure, sous la marque exclusive Pavimentum.
+                  intérieure — sous la marque exclusive Pavimentum.
                 </p>
                 <a href="carrelage.html" class="btn btn-secondary section-btn">Découvrir</a>
               </article>
@@ -190,21 +191,21 @@
               <p>
                 Le site met en avant plusieurs références : rénovation de
                 façades, ouvertures en sous-œuvre, maçonnerie patrimoniale, réfection
-                de toiture, zinguerie et chantiers de carrelage/faïence.
+                de couverture, zinguerie et chantiers Pavimentum.
               </p>
 
               <a href="realisations.html" class="btn btn-secondary section-btn">Voir les réalisations</a>
             </div>
 
             <div class="card media-card">
-              <img src="images/realisations/home-realisation.jpg" alt="Réalisation Ranc & Genevois" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);" />
+              <img src="images/realisations/home-realisation.jpg" alt="Chantier Ranc & Genevois Construction" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);" />
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
+        <footer class="site-footer">
       <div class="container footer-grid">
 
         <div class="footer-col footer-col-brand">
