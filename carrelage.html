@@ -3,58 +3,148 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrelage Pavimentum | Ranc & Genevois Construction</title>
-    <meta name="description" content="Carrelage, faïence et finitions intérieures sous la marque Pavimentum — expertise de Ranc & Genevois Construction en région lyonnaise." />
+    <title>Carrelage — Pavimentum | Ranc & Genevois Construction</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="pavi-page">
-    <header class="site-header">
+
+    <!-- HEADER SPÉCIAL PAVIMENTUM -->
+    <header class="site-header pavi-site-header">
       <div class="container header-inner">
-        <a href="index.html" class="logo">
-          <img src="images/logo.png" alt="Logo Ranc & Genevois Construction" />
-          <span class="logo-fallback">Ranc &amp; Genevois</span>
+
+        <!-- CO-BRANDING logo : R&G × PAVIMENTUM -->
+        <a href="index.html" class="logo pavi-cobranding">
+          <img
+            src="images/logo.png"
+            alt="Ranc & Genevois"
+            class="rg-logo-small"
+          />
+          <span class="pavi-header-sep">×</span>
+          <span class="pavi-header-brand">
+            <img
+              src="images/pavimentum-logo.png"
+              alt="Pavimentum"
+              class="pavi-header-logo-img"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span class="pavi-header-wordmark" style="display:none;">PAVIMENTUM</span>
+          </span>
         </a>
-        <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+
+        <button class="menu-toggle pavi-toggle" aria-label="Ouvrir le menu">☰</button>
+
         <nav class="main-nav">
-          <a href="entreprise.html" class="nav-pill">Entreprise</a>
+          <a href="entreprise.html" class="nav-pill pavi-nav-pill">Entreprise</a>
+
           <div class="nav-dropdown">
-            <a href="expertises.html" class="nav-pill">Expertises</a>
-            <div class="dropdown-menu">
+            <a href="expertises.html" class="nav-pill pavi-nav-pill">Expertises</a>
+            <div class="dropdown-menu pavi-dropdown">
               <a href="maconnerie.html">Maçonnerie</a>
               <a href="toiture.html">Charpente couverture &amp; zinguerie</a>
               <a href="renforcement.html">Renforcement de structure</a>
-              <a href="carrelage.html">Carrelage <span class="dropdown-pavi-badge">Pavimentum</span></a>
+              <a href="carrelage.html" class="pavi-active-link">
+                Carrelage
+                <span class="pavi-nav-badge">Pavimentum</span>
+              </a>
             </div>
           </div>
-          <a href="realisations.html" class="nav-pill">Réalisations</a>
-          <a href="contact.html" class="btn btn-small">Contact</a>
+
+          <a href="realisations.html" class="nav-pill pavi-nav-pill">Réalisations</a>
+          <a href="contact.html" class="btn pavi-btn-header btn-small">Contact</a>
         </nav>
       </div>
     </header>
 
     <main class="page">
-      <section class="page-hero">
-        <div class="container narrow">
-          <p class="eyebrow">Expertise</p>
-          <h1>Carrelage <span class="pavi-section-badge">Pavimentum</span></h1>
-          <p class="lead">
-            Carrelage, faïence et finitions pour les projets de rénovation
-            intérieure. Une offre complète développée sous la marque exclusive
-            Pavimentum, de la préparation du support aux finitions soignées.
-          </p>
+
+      <!-- HERO PAVIMENTUM PLEINE LARGEUR -->
+      <section class="pavi-hero">
+        <div class="pavi-hero-bg"></div>
+        <div class="pavi-hero-overlay"></div>
+        <div class="container pavi-hero-inner">
+
+          <div class="pavi-hero-top">
+            <span class="pavi-hero-origin">Ranc &amp; Genevois Construction</span>
+            <span class="pavi-hero-sep-dot">·</span>
+            <span class="pavi-hero-origin">Marque exclusive</span>
+          </div>
+
+          <div class="pavi-hero-center">
+            <!-- Logo Pavimentum grand format -->
+            <img
+              src="images/pavimentum-logo.png"
+              alt="Pavimentum"
+              class="pavi-hero-logo"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <h1 class="pavi-hero-wordmark" style="display:none;">PAVIMENTUM</h1>
+
+            <p class="pavi-hero-claim">
+              Carrelage, faïence &amp; matériaux de finition
+            </p>
+          </div>
+
+          <div class="pavi-hero-bottom">
+            <span class="pavi-tag">Carrelage</span>
+            <span class="pavi-tag">Faïence</span>
+            <span class="pavi-tag">Grands formats</span>
+            <span class="pavi-tag">Pose & fourniture</span>
+          </div>
+
         </div>
       </section>
 
+      <!-- PRÉSENTATION PAVIMENTUM -->
       <section class="section">
+        <div class="container split-grid">
+          <div class="text-block reveal">
+            <p class="eyebrow">La marque</p>
+            <h2>Une sélection dédiée,<br>de A jusqu'à la pose</h2>
+            <p>
+              Pavimentum est la marque de carrelage développée en propre par Ranc &amp; Genevois
+              Construction. Elle rassemble une gamme de matériaux — carreaux, faïences,
+              mosaïques, accessoires — rigoureusement sélectionnés pour leur qualité,
+              leur durabilité et leur cohérence avec les projets de rénovation du bâti ancien.
+            </p>
+            <p>
+              Cette offre intégrée permet un accompagnement complet : conseil au choix
+              des matériaux, fourniture depuis notre gamme et pose par nos équipes.
+              Une seule entreprise, une seule garantie.
+            </p>
+            <div class="pavi-tags">
+              <span class="pavi-tag pavi-tag-dark">Sélection exclusive</span>
+              <span class="pavi-tag pavi-tag-dark">Conseil matériaux</span>
+              <span class="pavi-tag pavi-tag-dark">Fourniture & pose</span>
+              <span class="pavi-tag pavi-tag-dark">Garantie complète</span>
+            </div>
+            <a href="contact.html" class="btn section-btn">Renseignez-vous</a>
+          </div>
+
+          <div class="media-card pavi-media-card reveal">
+            <img src="images/pavimentum/pavi-ambiance.jpg" alt="Réalisation Pavimentum carrelage" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);" />
+          </div>
+        </div>
+      </section>
+
+      <!-- AVANT / APRÈS + TECHNIQUE DE POSE -->
+      <section class="section" style="padding-top: 0;">
+        <div class="container">
+          <div class="pavi-section-label">
+            <span class="pavi-section-badge">Réalisations</span>
+            <h2 class="pavi-section-title">Notre savoir-faire</h2>
+          </div>
+        </div>
         <div class="container split-grid expertise-layout">
-          <div class="before-after-slider portrait-slider" data-before-after>
+          <div class="before-after-slider portrait-slider reveal" data-before-after>
             <div class="before-after-label before-label">Avant</div>
             <div class="before-after-label after-label">Après</div>
+
             <img
               src="images/expertises/carrelage-avant.jpg"
               alt="Carrelage avant travaux"
               class="before-after-image base-image"
             />
+
             <div class="after-image-wrapper" style="width: 50%;">
               <img
                 src="images/expertises/carrelage-apres.jpg"
@@ -62,9 +152,11 @@
                 class="before-after-image overlay-image"
               />
             </div>
+
             <div class="before-after-divider" style="left: 50%;">
               <div class="before-after-handle"></div>
             </div>
+
             <input
               type="range"
               min="0"
@@ -76,86 +168,62 @@
           </div>
 
           <div class="text-block reveal">
-            <h2>Finitions intérieures soignées</h2>
+            <h2>Finitions intérieures</h2>
+
             <div class="mini-tags">
-              <span class="mini-tag mini-tag-pavi">Faïence</span>
-              <span class="mini-tag mini-tag-pavi">Pose</span>
-              <span class="mini-tag mini-tag-pavi">Rénovation</span>
+              <span class="mini-tag">Faïence</span>
+              <span class="mini-tag">Pose</span>
+              <span class="mini-tag">Rénovation</span>
             </div>
+
             <p>
-              L'expertise Pavimentum couvre l'ensemble des travaux de carrelage
-              et de faïence pour les espaces intérieurs : salles de bain,
-              cuisines, pièces de vie et espaces techniques. Chaque chantier
-              commence par une préparation rigoureuse des supports.
+              Nos équipes interviennent sur tous types d'espaces — salles de bain,
+              douches, cuisines, séjours et espaces techniques. Chaque chantier est
+              précédé d'une étude du support et d'un choix raisonné des matériaux
+              selon les contraintes d'usage, d'humidité et d'esthétique.
             </p>
+
             <p>
-              L'entreprise intervient sur la démolition préalable,
-              l'imperméabilisation, la pose de carrelage au sol et de faïence
-              murale, ainsi que sur les finitions — niches, caniveaux, joints
-              et détails techniques.
+              La maîtrise des techniques de pose — grands formats, joint fin,
+              chevrons, pose décalée — permet d'obtenir un résultat soigné
+              et durable, quel que soit le style recherché.
             </p>
-            <p>
-              Une attention particulière est portée à la cohérence esthétique
-              de l'ensemble, pour un résultat durable et soigné.
-            </p>
+
             <a href="realisations.html" class="btn btn-secondary section-btn">Voir les réalisations</a>
           </div>
         </div>
       </section>
 
+      <!-- AUTRES EXPERTISES -->
       <section class="section">
         <div class="container">
           <div class="content-card">
             <p class="eyebrow">Autres expertises</p>
             <h2>Découvrir aussi</h2>
             <div class="quick-links">
-              <a href="maconnerie.html" class="nav-pill nav-pill-maconnerie">Maçonnerie</a>
-              <a href="toiture.html" class="nav-pill nav-pill-charpente">Charpente couverture &amp; zinguerie</a>
-              <a href="renforcement.html" class="nav-pill nav-pill-renforcement">Renforcement de structure</a>
+              <a href="maconnerie.html" class="nav-pill">Maçonnerie</a>
+              <a href="toiture.html" class="nav-pill">Charpente couverture</a>
             </div>
           </div>
         </div>
       </section>
+
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-col footer-col-brand">
-          <a href="index.html" class="footer-logo-link">
-            <img src="images/logo.png" alt="Logo Ranc &amp; Genevois Construction" class="footer-logo-img" />
-          </a>
-          <p class="footer-tagline">Maçonnerie, charpente couverture, renforcement de structure et Carrelage — Pavimentum<br>en région lyonnaise.</p>
-          <address class="footer-address">41 chemin du Pras<br>69350 La Mulatière</address>
+    <!-- FOOTER PAVIMENTUM -->
+    <footer class="site-footer pavi-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Ranc &amp; Genevois Construction</strong>
+          <p>41 chemin du Pras, 69350 La Mulatière</p>
         </div>
-        <div class="footer-col">
-          <h4 class="footer-heading">Navigation</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="entreprise.html">Entreprise</a></li>
-            <li><a href="expertises.html">Expertises</a></li>
-            <li><a href="realisations.html">Réalisations</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+        <div class="pavi-footer-brand">
+          <span class="pavi-footer-name">PAVIMENTUM</span>
+          <span class="pavi-footer-sub">Marque exclusive de carrelage</span>
         </div>
-        <div class="footer-col">
-          <h4 class="footer-heading">Expertises</h4>
-          <ul class="footer-links">
-            <li><a href="maconnerie.html">Maçonnerie</a></li>
-            <li><a href="toiture.html">Charpente couverture &amp; zinguerie</a></li>
-            <li><a href="renforcement.html">Renforcement de structure</a></li>
-            <li><a href="carrelage.html">Carrelage <span class="dropdown-pavi-badge">Pavimentum</span></a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4 class="footer-heading">Contact</h4>
-          <a href="tel:+33478592314" class="footer-contact-item">04 78 59 23 14</a>
-          <a href="mailto:contact@ranc-genevois.com" class="footer-contact-item">contact@ranc-genevois.com</a>
-          <a href="contact.html" class="btn btn-small footer-cta">Nous contacter</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="container footer-bottom-inner">
-          <p>&copy; 2025 Ranc &amp; Genevois Construction — Tous droits réservés</p>
+        <div>
+          <p>04 78 59 23 14</p>
+          <p>contact@ranc-genevois.com</p>
         </div>
       </div>
     </footer>
