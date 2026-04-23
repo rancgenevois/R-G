@@ -193,6 +193,39 @@ a {
   border-color: rgba(0,0,0,0.10);
 }
 
+/* Couleurs par expertise dans le dropdown */
+.dropdown-menu a[href="maconnerie.html"] {
+  border-left: 3px solid var(--color-maconnerie);
+  color: var(--color-maconnerie);
+}
+.dropdown-menu a[href="maconnerie.html"]:hover {
+  background: color-mix(in srgb, var(--color-maconnerie) 10%, white);
+}
+
+.dropdown-menu a[href="toiture.html"] {
+  border-left: 3px solid var(--color-charpente);
+  color: var(--color-charpente);
+}
+.dropdown-menu a[href="toiture.html"]:hover {
+  background: color-mix(in srgb, var(--color-charpente) 10%, white);
+}
+
+.dropdown-menu a[href="renforcement.html"] {
+  border-left: 3px solid var(--color-renforcement);
+  color: var(--color-renforcement);
+}
+.dropdown-menu a[href="renforcement.html"]:hover {
+  background: color-mix(in srgb, var(--color-renforcement) 10%, white);
+}
+
+.dropdown-menu a[href="carrelage.html"] {
+  border-left: 3px solid var(--color-pavi);
+  color: var(--color-pavi);
+}
+.dropdown-menu a[href="carrelage.html"]:hover {
+  background: color-mix(in srgb, var(--color-pavi) 10%, white);
+}
+
 /* Badge Pavimentum dans le dropdown — visible sur fond clair */
 .dropdown-pavi-badge {
   display: inline-flex;
