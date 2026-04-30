@@ -539,18 +539,42 @@ a.tag:hover {
 .mini-tag-maconnerie {
   background: var(--color-maconnerie);
   color: #fff;
+  border-radius: 999px;
 }
 .mini-tag-charpente {
   background: var(--color-charpente);
   color: #fff;
+  border-radius: 999px;
 }
 .mini-tag-pavi {
   background: var(--color-pavi);
   color: #fff;
+  border-radius: 999px;
 }
 .mini-tag-renforcement {
   background: var(--color-renforcement);
   color: #fff;
+  border-radius: 999px;
+}
+
+/* Tags expertise cliquables */
+a.mini-tag.tag-link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  display: inline-flex;
+}
+a.mini-tag.tag-link:hover {
+  opacity: 0.82;
+  transform: translateY(-1px);
+}
+
+/* Tags non-expertise (beige, coins moins arrondis, non cliquable) */
+span.mini-tag:not([class*="mini-tag-"]) {
+  background: #efe6dc;
+  color: #4d3928;
+  border-radius: 8px;
+  cursor: default;
 }
 
 /* ── Couleurs par expertise sur les .nav-pill (liens quick) ── */
