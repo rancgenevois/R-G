@@ -224,3 +224,50 @@ window.addEventListener("scroll", () => {
 scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+
+/* ═══════════════════════════════════════════
+   CARROUSEL RÉALISATIONS
+═══════════════════════════════════════════ */
+document.querySelectorAll(".project-carousel").forEach((carousel) => {
+  const track  = carousel.querySelector(".carousel-track");
+  const imgs   = Array.from(track.querySelectorAll("img"));
+  const prev   = carousel.querySelector(".carousel-prev");
+  const next   = carousel.querySelector(".carousel-next");
+  const dotsEl = carousel.querySelector(".carousel-dots");
+
+  if (imgs.length <= 1) {
+    carousel.classList.add("carousel-single");
+    return;
+  }
+
+  let current = 0;
+
+  // Créer les dots
+  imgs.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.className = "carousel-dot" + (i === 0 ? " active" : "");
+    dot.setAttribute("aria-label", `Image ${i + 1}`);
+    dot.addEventListener("click", () => goTo(i));
+    dotsEl.appendChild(dot);
+  });
+
+  const dots = Array.from(dotsEl.querySelectorAll(".carousel-dot"));
+
+  const goTo = (index) => {
+    current = (index + imgs.length) % imgs.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle("active", i === current));
+  };
+
+  prev.addEventListener("click", () => goTo(current - 1));
+  next.addEventListener("click", () => goTo(current + 1));
+
+  // Swipe tactile
+  let startX = 0;
+  track.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener("touchend",   (e) => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+  });
+});
