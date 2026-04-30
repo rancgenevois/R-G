@@ -537,6 +537,21 @@ a.tag:hover {
   color: #fff;
 }
 
+/* ── Base commune tous les mini-tags ── */
+.mini-tag,
+a.mini-tag,
+span.mini-tag {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  height: 34px;
+  padding: 0 14px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 /* ── Couleurs par expertise sur les .mini-tag ── */
 .mini-tag-maconnerie {
   background: var(--color-maconnerie);
