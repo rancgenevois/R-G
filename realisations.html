@@ -170,7 +170,7 @@
           </article>
 
           <!-- TRIBUNE -->
-          <article class="card project-card project-card-vertical" data-expertise="renforcement">
+          <article class="card project-card project-card-vertical" data-expertise="renforcement charpente pavi">
             <div class="project-content">
               <div class="project-tags">
                 <a href="renforcement.html" class="mini-tag mini-tag-renforcement tag-link">Renforcement de structure</a>
@@ -397,9 +397,10 @@
             buttons.forEach(function (b) { b.classList.remove('active'); });
             btn.classList.add('active');
 
-            // Show / hide cards
+            // Show / hide cards — supporte multi-expertise séparées par espace
             cards.forEach(function (card) {
-              if (filter === 'all' || card.dataset.expertise === filter) {
+              const expertises = card.dataset.expertise ? card.dataset.expertise.split(' ') : [];
+              if (filter === 'all' || expertises.includes(filter)) {
                 card.classList.remove('hidden');
               } else {
                 card.classList.add('hidden');
