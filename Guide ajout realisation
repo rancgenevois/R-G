@@ -1,0 +1,312 @@
+# Comment ajouter un nouveau chantier sur le site
+
+Ce guide explique pas à pas comment ajouter une nouvelle réalisation sur la page **Réalisations** du site.
+
+---
+
+## ⚠️ Trois règles importantes avant de commencer
+
+1. **Ne jamais modifier directement la version du site en ligne.** Toujours créer une copie de travail (on appelle ça une "branche") pour éviter de casser le site si on fait une erreur.
+2. **Toujours vérifier le résultat sur son ordinateur** avant de mettre en ligne.
+3. **Faire relire son travail** par quelqu'un d'autre avant de publier.
+
+---
+
+## Étape 1 — Préparer les photos
+
+### Règles à respecter
+- **Maximum 4 photos par chantier** (au-delà, la carte devient trop grande).
+- Format : `.jpg` (plus léger que `.png`).
+- Largeur recommandée : entre **1200 et 1600 pixels**.
+- Poids recommandé : moins de **300 Ko par image**. Pour réduire le poids, utiliser un site comme [TinyJPG](https://tinyjpg.com) (gratuit, on dépose la photo, on télécharge la version compressée).
+
+### Comment nommer les photos
+Les noms doivent être :
+- **en minuscules** uniquement
+- **sans accents** (é, è, à interdits)
+- **sans espaces** (utiliser des tirets `-` à la place)
+- **sans caractères spéciaux** (pas de parenthèses, virgules, etc.)
+
+**Format à utiliser :**
+```
+nom-du-chantier-1.jpg
+nom-du-chantier-2.jpg
+nom-du-chantier-3.jpg
+nom-du-chantier-4.jpg
+```
+
+**Exemples corrects :**
+- ✅ `villa-sainte-foy-1.jpg`
+- ✅ `eglise-tassin-avant.jpg`
+- ✅ `eglise-tassin-apres.jpg`
+
+**Exemples à ne pas faire :**
+- ❌ `Photo Chantier (1).JPG` → espaces, parenthèses, majuscules
+- ❌ `réalisation été 2026.jpg` → accents et espaces
+
+### Où mettre les photos
+Toutes les photos vont dans le dossier suivant du site :
+```
+images/realisations/
+```
+
+---
+
+## Étape 2 — Identifier les expertises du chantier
+
+Un chantier peut concerner **une ou plusieurs expertises**. Voici les 4 expertises possibles :
+
+| Expertise | Code à utiliser | Couleur |
+|-----------|----------------|---------|
+| Maçonnerie | `maconnerie` | Orange |
+| Charpente couverture & zinguerie | `charpente` | Bleu marine |
+| Renforcement de structure | `renforcement` | Vert foncé |
+| Carrelage | `pavi` | Gris |
+
+**Si le chantier concerne plusieurs expertises**, il faut séparer les codes par un espace.
+Exemple pour un chantier de renforcement + charpente + carrelage :
+```
+data-expertise="renforcement charpente pavi"
+```
+
+---
+
+## Étape 3 — Comprendre les deux types d'étiquettes
+
+Sur chaque carte de chantier, il y a deux types d'étiquettes :
+
+### 1. Les étiquettes d'expertise — colorées et cliquables
+Pour les noms des 4 expertises (Maçonnerie, Charpente, Renforcement, Carrelage) ainsi que **Zinguerie**.
+Ces étiquettes sont arrondies, colorées, et quand on clique dessus on est redirigé vers la page de l'expertise.
+
+### 2. Les étiquettes descriptives — beiges et non cliquables
+Pour les mots-clés génériques (exemples : Patrimoine, Béton, Voûte, Sous-œuvre, Tuiles, Joints de pierre…).
+Ces étiquettes sont rectangulaires, couleur beige, et on ne peut pas cliquer dessus.
+
+> 💡 **Règle simple à retenir** : si c'est une des 4 expertises de l'entreprise (ou "Zinguerie"), c'est une étiquette colorée cliquable. Sinon, c'est une étiquette beige.
+
+---
+
+## Étape 4 — Le modèle de code à copier
+
+Ouvrir le fichier `realisations.html` et chercher cette ligne :
+```
+<div class="container realisations-grid">
+```
+
+**Juste en dessous**, coller le bloc de code suivant pour ajouter un nouveau chantier (il apparaîtra en premier dans la liste) :
+
+```html
+          <!-- NOUVEAU CHANTIER -->
+          <article class="card project-card project-card-vertical" data-expertise="maconnerie">
+            <div class="project-content">
+              <div class="project-tags">
+                <a href="maconnerie.html" class="mini-tag mini-tag-maconnerie tag-link">Maçonnerie</a>
+                <span class="mini-tag">Patrimoine</span>
+                <span class="mini-tag">Sous-œuvre</span>
+              </div>
+              <p>Description courte du chantier en une à trois phrases. Décrire les travaux réalisés.</p>
+            </div>
+            <div class="project-gallery gallery-2">
+              <img src="images/realisations/nom-chantier-1.jpg" alt="Description photo 1" />
+              <img src="images/realisations/nom-chantier-2.jpg" alt="Description photo 2" />
+            </div>
+            <div class="project-content project-footer">
+              <a href="maconnerie.html" class="btn btn-secondary section-btn">Voir l'expertise</a>
+            </div>
+          </article>
+```
+
+Il faut ensuite **adapter ce code** en remplaçant les parties à modifier (voir étapes suivantes).
+
+---
+
+## Étape 5 — Adapter le code à votre chantier
+
+### A. Changer l'expertise
+À la première ligne du code, remplacer le code expertise dans `data-expertise="..."` :
+
+Exemple pour un chantier de renforcement :
+```html
+<article class="card project-card project-card-vertical" data-expertise="renforcement">
+```
+
+Exemple pour un chantier multi-expertise (maçonnerie + charpente) :
+```html
+<article class="card project-card project-card-vertical" data-expertise="maconnerie charpente">
+```
+
+### B. Modifier les étiquettes
+Pour chaque étiquette d'expertise, utiliser le bon lien et la bonne classe couleur :
+
+| Expertise | Code de l'étiquette |
+|-----------|---------------------|
+| Maçonnerie | `<a href="maconnerie.html" class="mini-tag mini-tag-maconnerie tag-link">Maçonnerie</a>` |
+| Charpente couverture & zinguerie | `<a href="toiture.html" class="mini-tag mini-tag-charpente tag-link">Charpente couverture &amp; zinguerie</a>` |
+| Zinguerie | `<a href="toiture.html" class="mini-tag mini-tag-charpente tag-link">Zinguerie</a>` |
+| Renforcement de structure | `<a href="renforcement.html" class="mini-tag mini-tag-renforcement tag-link">Renforcement de structure</a>` |
+| Carrelage | `<a href="carrelage.html" class="mini-tag mini-tag-pavi tag-link">Carrelage</a>` |
+
+Pour les étiquettes descriptives (beiges, non cliquables), utiliser :
+```html
+<span class="mini-tag">Mot-clé</span>
+```
+
+### C. Écrire la description
+Remplacer la phrase d'exemple par une vraie description du chantier (1 à 3 phrases).
+
+### D. Ajouter les photos
+Adapter le nombre de photos en utilisant la bonne classe `gallery-X` :
+
+| Nombre de photos | Classe à utiliser |
+|------------------|-------------------|
+| 1 photo | `gallery-1` |
+| 2 photos | `gallery-2` |
+| 3 photos | `gallery-3` |
+| 4 photos | `gallery-4` |
+
+Exemple avec 3 photos :
+```html
+<div class="project-gallery gallery-3">
+  <img src="images/realisations/chantier-1.jpg" alt="Première photo" />
+  <img src="images/realisations/chantier-2.jpg" alt="Deuxième photo" />
+  <img src="images/realisations/chantier-3.jpg" alt="Troisième photo" />
+</div>
+```
+
+### E. Adapter le bouton "Voir l'expertise"
+À la fin de la carte, modifier le lien du bouton vers la page de l'**expertise principale** du chantier :
+
+- Maçonnerie → `href="maconnerie.html"`
+- Charpente → `href="toiture.html"`
+- Renforcement → `href="renforcement.html"`
+- Carrelage → `href="carrelage.html"`
+
+---
+
+## Étape 6 — Mettre en ligne sur GitHub
+
+GitHub est l'endroit où le code du site est stocké. Pour ajouter un chantier sans casser le site, on suit toujours ces 4 étapes :
+
+### 1. Créer une copie de travail (une "branche")
+
+Sur GitHub, en haut à gauche du dépôt, il y a un bouton avec écrit **"main"** dessus.
+
+1. Cliquer sur ce bouton **"main"**
+2. Dans la zone de saisie, taper un nom décrivant ce qu'on va faire
+   - Exemple : `ajout-chantier-villa-sainte-foy`
+   - Toujours en minuscules, avec des tirets, sans espaces ni accents
+3. Cliquer sur **"Create branch: ajout-chantier-..."** qui apparaît en dessous
+
+Voilà, on travaille maintenant sur une copie. Si on fait une erreur, le site en ligne n'est pas impacté.
+
+### 2. Ajouter les photos
+
+Toujours sur GitHub :
+
+1. Naviguer dans le dossier `images/realisations/` du projet
+2. Cliquer sur **"Add file"** (en haut à droite) → **"Upload files"**
+3. Glisser-déposer toutes les photos du chantier
+4. **Vérifier en bas de page que la branche est bien la nouvelle copie** (pas "main")
+5. Dans le champ message en bas, écrire par exemple : `Ajout photos chantier Villa Sainte-Foy`
+6. Cliquer sur le bouton vert **"Commit changes"**
+
+### 3. Modifier le fichier `realisations.html`
+
+1. Revenir à la racine du projet
+2. Cliquer sur le fichier `realisations.html`
+3. Cliquer sur l'icône **crayon** en haut à droite (pour éditer)
+4. Coller le bloc de code adapté au bon endroit (juste après `<div class="container realisations-grid">`)
+5. **Vérifier en bas de page que la branche est bien la nouvelle copie**
+6. Dans le champ message, écrire par exemple : `Ajout chantier Villa Sainte-Foy`
+7. Cliquer sur le bouton vert **"Commit changes"**
+
+### 4. Demander la mise en ligne (la "Pull Request")
+
+Une "Pull Request" (souvent abrégée "PR"), c'est simplement une **demande pour intégrer la copie de travail au site officiel**. Cela permet à quelqu'un d'autre de relire avant de publier.
+
+1. Sur la page principale du dépôt GitHub, un bandeau jaune apparaît avec le nom de la branche et un bouton **"Compare & pull request"**
+2. Cliquer dessus
+3. Dans le titre, écrire par exemple : `Ajout chantier Villa Sainte-Foy`
+4. Dans la description, indiquer brièvement ce qui a été ajouté
+5. Cliquer sur **"Create pull request"**
+
+Une autre personne pourra ensuite relire et cliquer sur **"Merge pull request"** pour mettre les changements en ligne. Le site officiel sera alors mis à jour automatiquement.
+
+---
+
+## Exemple complet
+
+Pour un chantier **"Maison Écully"** avec 3 photos, en maçonnerie + charpente :
+
+### Photos à mettre dans `images/realisations/` :
+- `maison-ecully-1.jpg`
+- `maison-ecully-2.jpg`
+- `maison-ecully-3.jpg`
+
+### Code à coller dans `realisations.html` :
+```html
+          <!-- MAISON ÉCULLY -->
+          <article class="card project-card project-card-vertical" data-expertise="maconnerie charpente">
+            <div class="project-content">
+              <div class="project-tags">
+                <a href="maconnerie.html" class="mini-tag mini-tag-maconnerie tag-link">Maçonnerie</a>
+                <a href="toiture.html" class="mini-tag mini-tag-charpente tag-link">Charpente couverture &amp; zinguerie</a>
+                <a href="toiture.html" class="mini-tag mini-tag-charpente tag-link">Zinguerie</a>
+                <span class="mini-tag">Rénovation</span>
+              </div>
+              <p>Rénovation complète d'une maison à Écully : reprise de façades en pierre, réfection de la couverture en tuiles canal et remplacement des chéneaux en zinc.</p>
+            </div>
+            <div class="project-gallery gallery-3">
+              <img src="images/realisations/maison-ecully-1.jpg" alt="Façade avant travaux" />
+              <img src="images/realisations/maison-ecully-2.jpg" alt="Toiture en cours de réfection" />
+              <img src="images/realisations/maison-ecully-3.jpg" alt="Maison après travaux" />
+            </div>
+            <div class="project-content project-footer">
+              <a href="maconnerie.html" class="btn btn-secondary section-btn">Voir l'expertise</a>
+            </div>
+          </article>
+```
+
+---
+
+## Petite checklist à vérifier avant de publier
+
+Avant de demander la mise en ligne, vérifier que :
+
+- [ ] Les photos sont bien dans `images/realisations/`
+- [ ] Les noms de fichiers sont en minuscules, sans espaces ni accents
+- [ ] Le nombre dans `gallery-X` correspond bien au nombre de photos
+- [ ] `data-expertise="..."` contient le bon code (`maconnerie`, `charpente`, `renforcement` ou `pavi`)
+- [ ] Les étiquettes d'expertise sont écrites avec `<a href="...">` et la bonne classe couleur
+- [ ] Les étiquettes descriptives sont écrites avec `<span>`
+- [ ] Le bouton "Voir l'expertise" pointe vers la bonne page
+- [ ] J'ai vérifié sur GitHub que tout s'affiche bien avant de demander la mise en ligne
+
+---
+
+## Si quelque chose ne marche pas
+
+| Problème | Solution |
+|----------|----------|
+| Une photo ne s'affiche pas | Vérifier que le nom dans le code correspond **exactement** au nom du fichier (attention aux majuscules/minuscules). |
+| Une étiquette n'a pas la bonne couleur | Vérifier la classe `mini-tag-xxx` (`maconnerie`, `charpente`, `renforcement` ou `pavi`). |
+| Le chantier n'apparaît pas quand on filtre par expertise | Vérifier l'attribut `data-expertise="..."` au début de la carte. |
+| Les photos sont déformées ou mal cadrées | C'est normal, elles sont automatiquement recadrées. Choisir des photos avec le sujet bien centré. |
+| J'ai fait une erreur et le site est cassé | Pas de panique : tant que la branche n'est pas "mergée", le site officiel n'est pas affecté. Il suffit de corriger l'erreur et de re-commiter sur la même branche. |
+
+---
+
+## Glossaire des termes utilisés
+
+| Terme | Signification |
+|-------|---------------|
+| **Branche** | Une copie de travail du site, indépendante de la version officielle. |
+| **main** | La branche principale, qui correspond au site en ligne. **À ne jamais modifier directement.** |
+| **Commit** | Action de sauvegarder une modification dans GitHub. |
+| **Pull Request** (ou PR) | Demande d'intégrer les modifications d'une branche dans la version officielle. Permet à quelqu'un d'autre de relire avant publication. |
+| **Merger** | Intégrer les modifications dans la version officielle. C'est la dernière étape pour publier. |
+
+---
+
+*Document à conserver à la racine du dépôt pour pouvoir le consulter à tout moment.*
